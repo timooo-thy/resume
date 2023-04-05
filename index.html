@@ -415,7 +415,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 				<!-- Footer -->
 					<footer id="footer">
-						<p class="copyright">&copy; Timothy Lee. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+						<p class="copyright">&copy; <span id="year"></span>. Timothy Lee. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
 					</footer>
 
 			</div>
@@ -424,6 +424,10 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<div id="bg"></div>
 
 		<!-- Scripts -->
+			<script>
+				const currentYear = new Date().getFullYear();
+				document.getElementById("year").textContent = currentYear;
+			</script>
 			<script src="static/assets/js/jquery.min.js"></script>
 			<script src="static/assets/js/browser.min.js"></script>
 			<script src="static/assets/js/breakpoints.min.js"></script>
