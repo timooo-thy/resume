@@ -16,7 +16,7 @@ def send_email():
 
     # Replace the placeholders with your email details
     sender_email = 'timothylhy@hotmail.com'
-    sender_password = 'Noobly123'
+    sender_password = ''
     receiver_email = 'timothylhy@hotmail.com'
 
     # Create a SMTP session and login to your email account
