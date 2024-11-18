@@ -5,7 +5,7 @@ import { POSTS_CARD_QUERY } from "@/lib/sanity.queries";
 import { urlFor } from "@/sanity/lib/image";
 
 const POSTS_PER_PAGE = 4;
-export const revalidate = 60;
+const options = { next: { revalidate: 60 } };
 
 export default async function Home({
   searchParams,
@@ -19,7 +19,8 @@ export default async function Home({
 
   const { posts, total } = await client.fetch<POSTS_CARD_QUERYResult>(
     POSTS_CARD_QUERY,
-    { start, end }
+    { start, end },
+    options
   );
 
   const postsWithUrls = posts.map((post) => ({
