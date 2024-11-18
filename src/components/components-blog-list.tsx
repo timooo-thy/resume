@@ -50,8 +50,9 @@ export function BlogList({
                   <Image
                     src={post.url}
                     alt={post.title ?? ""}
-                    width={300}
-                    height={200}
+                    width={2400}
+                    height={1000}
+                    quality={100}
                     className="w-full h-48 object-cover mb-4 rounded-lg"
                   />
                 )}

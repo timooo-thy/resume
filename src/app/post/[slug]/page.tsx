@@ -104,7 +104,7 @@ export default async function PostPage({
   );
 
   const postImageUrl = post?.mainImage
-    ? urlFor(post.mainImage)?.width(1200).height(630).url()
+    ? urlFor(post.mainImage)?.width(2400).height(1000).quality(100).url()
     : null;
 
   const readTime = estimateReadTime(JSON.stringify(post?.body));
@@ -154,7 +154,11 @@ export default async function PostPage({
                   <AvatarImage
                     src={
                       post?.author.image
-                        ? urlFor(post.author.image)?.width(40).height(40).url()
+                        ? urlFor(post.author.image)
+                            ?.width(800)
+                            .height(800)
+                            .quality(100)
+                            .url()
                         : undefined
                     }
                   />
