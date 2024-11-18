@@ -12,7 +12,7 @@ import {
   FacebookIcon,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { INDIVIDUAL_POST_QUERYResult } from "../../../../sanity.types";
+import { INDIVIDUAL_POST_QUERYResult } from "../../../lib/sanity.types";
 import { TwitterIcon } from "@sanity/icons";
 import { INDIVIDUAL_POST_QUERY } from "@/lib/sanity.queries";
 import { urlFor } from "@/sanity/lib/image";
@@ -21,7 +21,7 @@ import CodeBlock from "@/components/code-block";
 
 const options = { next: { revalidate: 30 } };
 
-export const customComponents: PortableTextReactComponents = {
+const customComponents: PortableTextReactComponents = {
   block: {
     h1: ({ children }) => (
       <h1 className="text-4xl font-extrabold mt-16 mb-6">{children}</h1>
@@ -93,11 +93,13 @@ export const customComponents: PortableTextReactComponents = {
 export default async function PostPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
+  const parameters = await params;
+
   const post = await client.fetch<INDIVIDUAL_POST_QUERYResult>(
     INDIVIDUAL_POST_QUERY,
-    params,
+    parameters,
     options
   );
 

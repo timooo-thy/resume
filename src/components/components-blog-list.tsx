@@ -12,7 +12,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { POSTS_CARD_QUERYResult } from "../../sanity.types";
+import { POSTS_CARD_QUERYResult } from "../lib/sanity.types";
 
 type BlogListProps = {
   posts: (POSTS_CARD_QUERYResult["posts"][number] & { url?: string })[];

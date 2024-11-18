@@ -1,6 +1,6 @@
 import { client } from "@/sanity/lib/client";
 import { BlogList } from "@/components/components-blog-list";
-import { POSTS_CARD_QUERYResult } from "../../sanity.types";
+import { POSTS_CARD_QUERYResult } from "../lib/sanity.types";
 import { POSTS_CARD_QUERY } from "@/lib/sanity.queries";
 import { urlFor } from "@/sanity/lib/image";
 
