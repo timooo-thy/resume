@@ -8,11 +8,11 @@ const POSTS_PER_PAGE = 4;
 export const revalidate = 60;
 
 export default async function Home({
-  searchParams,
+  params,
 }: {
-  searchParams: { [key: string]: string | string[] | undefined };
+  params: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
-  const page = Number(searchParams["page"] ?? "1");
+  const page = Number((await params)["page"] ?? "1");
   const start = (page - 1) * POSTS_PER_PAGE;
   const end = start + POSTS_PER_PAGE;
 
