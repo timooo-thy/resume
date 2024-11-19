@@ -215,14 +215,14 @@ export default async function PostPage({
                 </div>
               </div>
             </div>
-            <div className="flex flex-wrap gap-2 mb-8">
+            <div className="flex flex-wrap gap-2">
               {post.categories.map((category) => (
                 <Badge key={category.title} variant="secondary">
                   {category.title}
                 </Badge>
               ))}
             </div>
-            <div className="prose prose-lg dark:prose-invert max-w-none">
+            <div>
               {Array.isArray(post.body) && (
                 <PortableText value={post.body} components={customComponents} />
               )}

@@ -12,10 +12,10 @@ export default async function ViewCount({ slug }: ViewCountProps) {
   const ip = (await headers()).get("x-forwarded-for") || "127.0.0.1";
   let count = await redis.incr(slug);
 
-  if (await redis.exists(ip)) {
+  if (await redis.exists(ip + slug)) {
     count = await redis.decr(slug);
   } else {
-    await redis.set(ip, "true", {
+    await redis.set(ip + slug, "true", {
       ex: 60,
     });
   }
