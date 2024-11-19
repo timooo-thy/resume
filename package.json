@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "typegen": "sanity schema extract --enforce-required-fields --path=src/sanity/schema.json && sanity typegen generate"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.1",
