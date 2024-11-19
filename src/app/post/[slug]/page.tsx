@@ -87,7 +87,7 @@ const customComponents: PortableTextReactComponents = {
   unknownListItem: ({ children }) => <li>{children}</li>,
 };
 
-export const getPost = cache(async (params: { slug: string }) => {
+const getPost = cache(async (params: { slug: string }) => {
   return await client.fetch<INDIVIDUAL_POST_QUERYResult>(
     INDIVIDUAL_POST_QUERY,
     params

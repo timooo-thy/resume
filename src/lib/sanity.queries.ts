@@ -21,3 +21,8 @@ export const POSTS_CARD_QUERY = defineQuery(groq`
       "total": count(*[_type == "post"])
     }
   `);
+
+export const POSTS_LIST_SLUG_QUERY = defineQuery(`
+  *[_type == "post"] | order(publishedAt desc) {
+  slug,
+}`);

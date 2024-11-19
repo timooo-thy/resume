@@ -1,10 +1,23 @@
 import { client } from "@/sanity/lib/client";
 import { BlogList } from "@/components/components-blog-list";
-import { POSTS_CARD_QUERYResult } from "../lib/sanity.types";
-import { POSTS_CARD_QUERY } from "@/lib/sanity.queries";
+import {
+  POSTS_CARD_QUERYResult,
+  POSTS_LIST_SLUG_QUERYResult,
+} from "../lib/sanity.types";
+import { POSTS_CARD_QUERY, POSTS_LIST_SLUG_QUERY } from "@/lib/sanity.queries";
 import { urlFor } from "@/sanity/lib/image";
 
 const POSTS_PER_PAGE = 4;
+
+export async function generateStaticParams() {
+  const posts = await client.fetch<POSTS_LIST_SLUG_QUERYResult>(
+    POSTS_LIST_SLUG_QUERY
+  );
+
+  return posts.map((post) => ({
+    id: String(post.slug.current),
+  }));
+}
 
 export default async function Home({
   searchParams,

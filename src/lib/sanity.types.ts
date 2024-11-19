@@ -102,42 +102,38 @@ export type Post = {
     [internalGroqTypeReferenceTo]?: "category";
   }>;
   publishedAt: string;
-  body: Array<
-    | {
-        children?: Array<{
-          marks?: Array<string>;
-          text?: string;
-          _type: "span";
-          _key: string;
-        }>;
-        style?: "normal" | "h1" | "h2" | "h3" | "h4" | "blockquote";
-        listItem?: "bullet";
-        markDefs?: Array<{
-          href?: string;
-          _type: "link";
-          _key: string;
-        }>;
-        level?: number;
-        _type: "block";
-        _key: string;
-      }
-    | {
-        asset?: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        };
-        hotspot?: SanityImageHotspot;
-        crop?: SanityImageCrop;
-        alt?: string;
-        _type: "image";
-        _key: string;
-      }
-    | ({
-        _key: string;
-      } & Code)
-  >;
+  body: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "blockquote";
+    listItem?: "bullet";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  } | {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+    _key: string;
+  } | {
+    _key: string;
+  } & Code>;
 };
 
 export type Author = {
@@ -196,42 +192,38 @@ export type Slug = {
   source?: string;
 };
 
-export type BlockContent = Array<
-  | {
-      children?: Array<{
-        marks?: Array<string>;
-        text?: string;
-        _type: "span";
-        _key: string;
-      }>;
-      style?: "normal" | "h1" | "h2" | "h3" | "h4" | "blockquote";
-      listItem?: "bullet";
-      markDefs?: Array<{
-        href?: string;
-        _type: "link";
-        _key: string;
-      }>;
-      level?: number;
-      _type: "block";
-      _key: string;
-    }
-  | {
-      asset?: {
-        _ref: string;
-        _type: "reference";
-        _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-      };
-      hotspot?: SanityImageHotspot;
-      crop?: SanityImageCrop;
-      alt?: string;
-      _type: "image";
-      _key: string;
-    }
-  | ({
-      _key: string;
-    } & Code)
->;
+export type BlockContent = Array<{
+  children?: Array<{
+    marks?: Array<string>;
+    text?: string;
+    _type: "span";
+    _key: string;
+  }>;
+  style?: "normal" | "h1" | "h2" | "h3" | "h4" | "blockquote";
+  listItem?: "bullet";
+  markDefs?: Array<{
+    href?: string;
+    _type: "link";
+    _key: string;
+  }>;
+  level?: number;
+  _type: "block";
+  _key: string;
+} | {
+  asset?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+  };
+  hotspot?: SanityImageHotspot;
+  crop?: SanityImageCrop;
+  alt?: string;
+  _type: "image";
+  _key: string;
+} | {
+  _key: string;
+} & Code>;
 
 export type SanityImageCrop = {
   _type: "sanity.imageCrop";
@@ -298,23 +290,7 @@ export type Code = {
   highlightedLines?: Array<number>;
 };
 
-export type AllSanitySchemaTypes =
-  | SanityImagePaletteSwatch
-  | SanityImagePalette
-  | SanityImageDimensions
-  | SanityFileAsset
-  | Geopoint
-  | Post
-  | Author
-  | Category
-  | Slug
-  | BlockContent
-  | SanityImageCrop
-  | SanityImageHotspot
-  | SanityImageAsset
-  | SanityAssetSourceData
-  | SanityImageMetadata
-  | Code;
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | Post | Author | Category | Slug | BlockContent | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Code;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./src/lib/sanity.queries.ts
 // Variable: INDIVIDUAL_POST_QUERY
@@ -388,42 +364,38 @@ export type INDIVIDUAL_POST_QUERYResult = {
     description: string;
   }>;
   publishedAt: string;
-  body: Array<
-    | ({
-        _key: string;
-      } & Code)
-    | {
-        children?: Array<{
-          marks?: Array<string>;
-          text?: string;
-          _type: "span";
-          _key: string;
-        }>;
-        style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "normal";
-        listItem?: "bullet";
-        markDefs?: Array<{
-          href?: string;
-          _type: "link";
-          _key: string;
-        }>;
-        level?: number;
-        _type: "block";
-        _key: string;
-      }
-    | {
-        asset?: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        };
-        hotspot?: SanityImageHotspot;
-        crop?: SanityImageCrop;
-        alt?: string;
-        _type: "image";
-        _key: string;
-      }
-  >;
+  body: Array<{
+    _key: string;
+  } & Code | {
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "normal";
+    listItem?: "bullet";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  } | {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+    _key: string;
+  }>;
 } | null;
 // Variable: POSTS_CARD_QUERY
 // Query: {      "posts": *[_type == "post"] | order(publishedAt desc) [$start...$end] {        _id,        title,        slug,        mainImage,        publishedAt,        author->{name},        categories[]->{title}      },      "total": count(*[_type == "post"])    }
@@ -454,12 +426,18 @@ export type POSTS_CARD_QUERYResult = {
   }>;
   total: number;
 };
+// Variable: POSTS_LIST_SLUG_QUERY
+// Query: *[_type == "post"] | order(publishedAt desc) {  slug,}
+export type POSTS_LIST_SLUG_QUERYResult = Array<{
+  slug: Slug;
+}>;
 
 // Query TypeMap
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    '*[_type == "post" && slug.current == $slug][0]{\n  ...,\n  author->,\n  categories[]->\n}': INDIVIDUAL_POST_QUERYResult;
-    '\n    {\n      "posts": *[_type == "post"] | order(publishedAt desc) [$start...$end] {\n        _id,\n        title,\n        slug,\n        mainImage,\n        publishedAt,\n        author->{name},\n        categories[]->{title}\n      },\n      "total": count(*[_type == "post"])\n    }\n  ': POSTS_CARD_QUERYResult;
+    "*[_type == \"post\" && slug.current == $slug][0]{\n  ...,\n  author->,\n  categories[]->\n}": INDIVIDUAL_POST_QUERYResult;
+    "\n    {\n      \"posts\": *[_type == \"post\"] | order(publishedAt desc) [$start...$end] {\n        _id,\n        title,\n        slug,\n        mainImage,\n        publishedAt,\n        author->{name},\n        categories[]->{title}\n      },\n      \"total\": count(*[_type == \"post\"])\n    }\n  ": POSTS_CARD_QUERYResult;
+    "\n  *[_type == \"post\"] | order(publishedAt desc) {\n  slug,\n}": POSTS_LIST_SLUG_QUERYResult;
   }
 }
