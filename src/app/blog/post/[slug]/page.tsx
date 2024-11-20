@@ -42,7 +42,7 @@ const customComponents: PortableTextReactComponents = {
       <h4 className="text-xl font-medium mt-8 mb-2">{children}</h4>
     ),
 
-    normal: ({ children }) => <p className="text-lg mb-1 ">{children}</p>,
+    normal: ({ children }) => <p className="text-base mb-1 ">{children}</p>,
   },
   marks: {
     link: ({ value, children }) => (
@@ -74,16 +74,16 @@ const customComponents: PortableTextReactComponents = {
   },
   list: {
     bullet: ({ children }) => (
-      <ul className="list-disc ml-6 mb-4 text-lg">{children}</ul>
+      <ul className="list-disc ml-6 mb-4 text-base">{children}</ul>
     ),
 
     number: ({ children }) => (
-      <ol className="list-decimal ml-6 mb-4 text-lg">{children}</ol>
+      <ol className="list-decimal ml-6 mb-4 text-base">{children}</ol>
     ),
   },
   listItem: {
-    bullet: ({ children }) => <li className="mb-1 text-lg">{children}</li>,
-    number: ({ children }) => <li className="mb-1 text-lg">{children}</li>,
+    bullet: ({ children }) => <li className="mb-1 text-base">{children}</li>,
+    number: ({ children }) => <li className="mb-1 text-base">{children}</li>,
   },
   hardBreak: () => <br />,
   unknownMark: ({ children }) => <span>{children}</span>,
@@ -154,7 +154,7 @@ export default async function PostPage({
   }
 
   return (
-    <main className="container mx-auto px-4 py-8">
+    <main className="container mx-auto py-8">
       <Link
         href="/blog"
         className="inline-flex items-center text-sm text-muted-foreground hover:text-primary mb-8"
