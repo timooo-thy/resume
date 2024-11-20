@@ -1,9 +1,5 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -13,6 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { POSTS_CARD_QUERYResult } from "@/lib/sanity.types";
+import Pagination from "./pagination";
 
 type BlogListProps = {
   posts: (POSTS_CARD_QUERYResult["posts"][number] & { url?: string })[];
@@ -27,15 +24,6 @@ export function BlogList({
   totalPosts,
   postsPerPage,
 }: BlogListProps) {
-  const router = useRouter();
-  const [page, setPage] = useState(currentPage);
-  const totalPages = Math.ceil(totalPosts / postsPerPage);
-
-  const handlePageChange = (newPage: number) => {
-    setPage(newPage);
-    router.push(`/blog?page=${newPage}`);
-  };
-
   return (
     <section>
       <div className="min-h-[900px]">
@@ -79,25 +67,11 @@ export function BlogList({
           ))}
         </div>
       </div>
-      <div className="flex justify-center items-center space-x-4">
-        <Button
-          onClick={() => handlePageChange(page - 1)}
-          disabled={page === 1}
-          variant="outline"
-        >
-          Previous
-        </Button>
-        <span className="text-muted-foreground">
-          Page {page} of {totalPages}
-        </span>
-        <Button
-          onClick={() => handlePageChange(page + 1)}
-          disabled={page === totalPages}
-          variant="outline"
-        >
-          Next
-        </Button>
-      </div>
+      <Pagination
+        currentPage={currentPage}
+        postsPerPage={postsPerPage}
+        totalPosts={totalPosts}
+      />
     </section>
   );
 }

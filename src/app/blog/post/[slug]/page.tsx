@@ -5,8 +5,14 @@ import Image from "next/image";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { CalendarIcon, ClockIcon, ArrowLeftIcon } from "lucide-react";
-import { INDIVIDUAL_POST_QUERYResult } from "../../../../lib/sanity.types";
-import { INDIVIDUAL_POST_QUERY } from "@/lib/sanity.queries";
+import {
+  INDIVIDUAL_POST_QUERYResult,
+  POSTS_LIST_SLUG_QUERYResult,
+} from "../../../../lib/sanity.types";
+import {
+  INDIVIDUAL_POST_QUERY,
+  POSTS_LIST_SLUG_QUERY,
+} from "@/lib/sanity.queries";
 import { urlFor } from "@/sanity/lib/image";
 import { estimateReadTime } from "@/lib/utils";
 import CodeBlock from "@/components/code-block";
@@ -120,6 +126,16 @@ export async function generateMetadata({
   };
 }
 
+export async function generateStaticParams() {
+  const posts = await client.fetch<POSTS_LIST_SLUG_QUERYResult>(
+    POSTS_LIST_SLUG_QUERY
+  );
+
+  return posts.map((post) => ({
+    slug: String(post.slug.current),
+  }));
+}
+
 export default async function PostPage({
   params,
 }: {
@@ -165,11 +181,7 @@ export default async function PostPage({
             <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-6">
               <div className="flex items-center">
                 <CalendarIcon className="mr-2 h-4 w-4" />
-                {new Date(post.publishedAt).toLocaleDateString("en-US", {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}
+                {new Date(post.publishedAt).toLocaleDateString()}
               </div>
               <div className="flex items-center">
                 <ClockIcon className="mr-2 h-4 w-4" />

@@ -5,10 +5,7 @@ import {
   CommandEmpty,
   CommandGroup,
   CommandInput,
-  CommandItem,
   CommandList,
-  CommandSeparator,
-  CommandShortcut,
 } from "@/components/ui/command";
 import { Button } from "./ui/button";
 import { useEffect, useState } from "react";
@@ -32,7 +29,7 @@ export function CommandBlock() {
   return (
     <>
       <Button
-        className="bg-current w-36 hover:bg-gray-100 px-2 border"
+        className="bg-current w-36 hover:bg-gray-100 dark:hover:bg-black px-2 border"
         onClick={() => setOpen(true)}
       >
         <div className="flex items-center justify-between w-full">
