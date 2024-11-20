@@ -112,7 +112,9 @@ export default function Navbar() {
                 <Menu className="h-5 w-5" />
                 <span className="sr-only">Toggle Menu</span>
               </Button>
-              <h1 className="font-semibold md:hidden">Timothy's Portfolio</h1>
+              <h1 className="font-semibold md:hidden">
+                Timothy&apos;s Portfolio
+              </h1>
               <div className="md:hidden">
                 <ModeToggle />
               </div>
@@ -124,7 +126,7 @@ export default function Navbar() {
               className="flex items-center"
               onOpenChange={setIsOpen}
             >
-              <span className="font-bold">Timothy's Portfolio</span>
+              <span className="font-bold">Timothy&apos;s Portfolio</span>
             </MobileLink>
             <div className="my-4 h-[calc(100vh-8rem)] overflow-y-auto">
               <div className="flex flex-col space-y-3">
