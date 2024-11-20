@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { CalendarIcon, ClockIcon, ArrowLeftIcon } from "lucide-react";
-import { INDIVIDUAL_POST_QUERYResult } from "../../../lib/sanity.types";
+import { INDIVIDUAL_POST_QUERYResult } from "../../../../lib/sanity.types";
 import { INDIVIDUAL_POST_QUERY } from "@/lib/sanity.queries";
 import { urlFor } from "@/sanity/lib/image";
 import { estimateReadTime } from "@/lib/utils";
@@ -114,7 +114,7 @@ export async function generateMetadata({
       title: post?.title,
       description:
         "A blog about web development, software engineering, and other tech-related topics.",
-      url: `${process.env.NEXT_PUBLIC_URL}/${parameters.slug}`,
+      url: `${process.env.NEXT_PUBLIC_URL}/blog/post/${parameters.slug}`,
       images: [postImageUrl],
     },
   };
@@ -138,7 +138,7 @@ export default async function PostPage({
   }
 
   return (
-    <main className="container mx-auto max-w-4xl px-4 py-8">
+    <main className="container mx-auto px-4 py-8">
       <Link
         href="/"
         className="inline-flex items-center text-sm text-muted-foreground hover:text-primary mb-8"

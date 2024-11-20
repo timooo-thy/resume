@@ -12,7 +12,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { POSTS_CARD_QUERYResult } from "../lib/sanity.types";
+import { POSTS_CARD_QUERYResult } from "@/lib/sanity.types";
 
 type BlogListProps = {
   posts: (POSTS_CARD_QUERYResult["posts"][number] & { url?: string })[];
@@ -33,7 +33,7 @@ export function BlogList({
 
   const handlePageChange = (newPage: number) => {
     setPage(newPage);
-    router.push(`/?page=${newPage}`);
+    router.push(`/blog?page=${newPage}`);
   };
 
   return (
@@ -71,7 +71,7 @@ export function BlogList({
                 </div>
               </CardContent>
               <CardFooter>
-                <Link href={`/post/${post.slug?.current}`}>
+                <Link href={`/blog/post/${post.slug?.current}`}>
                   <Button variant="outline">Read More</Button>
                 </Link>
               </CardFooter>
