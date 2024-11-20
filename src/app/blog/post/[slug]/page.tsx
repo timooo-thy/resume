@@ -156,7 +156,7 @@ export default async function PostPage({
   return (
     <main className="container mx-auto px-4 py-8">
       <Link
-        href="/"
+        href="/blog"
         className="inline-flex items-center text-sm text-muted-foreground hover:text-primary mb-8"
       >
         <ArrowLeftIcon className="mr-2 h-4 w-4" />
