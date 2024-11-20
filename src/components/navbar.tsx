@@ -104,7 +104,7 @@ export default function Navbar() {
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <DialogTitle className="hidden">Sidebar</DialogTitle>
           <SheetTrigger asChild>
-            <div className="flex items-center justify-between w-full">
+            <div className="flex items-center justify-between w-full md:hidden">
               <Button
                 variant="ghost"
                 className="mx-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
@@ -112,8 +112,8 @@ export default function Navbar() {
                 <Menu className="h-5 w-5" />
                 <span className="sr-only">Toggle Menu</span>
               </Button>
-              <h1 className="font-semibold">Timothy's Portfolio</h1>
-              <div>
+              <h1 className="font-semibold md:hidden">Timothy's Portfolio</h1>
+              <div className="md:hidden">
                 <ModeToggle />
               </div>
             </div>
