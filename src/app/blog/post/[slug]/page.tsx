@@ -160,7 +160,7 @@ export default async function PostPage({
   }
 
   return (
-    <main className="container mx-auto pb-8 px-2 md:px-0">
+    <main className="container mx-auto pb-8 px-2 xl:px-0">
       <Link
         href="/blog"
         className="inline-flex items-center text-muted-foreground hover:text-black my-4 font-semibold"

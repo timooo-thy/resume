@@ -20,7 +20,7 @@ import { Cover } from "@/components/cover";
 
 export default function Home() {
   return (
-    <main className="mx-auto space-y-6 py-2 container px-2 md:px-0">
+    <main className="mx-auto space-y-6 py-2 container px-2 xl:px-0">
       <BackgroundBeamsWithCollision className="my-4 flex flex-col rounded-xl h-32 md:h-[16rem]">
         <TypewriterEffect
           words={[

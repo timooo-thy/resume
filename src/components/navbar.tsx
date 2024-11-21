@@ -34,7 +34,7 @@ export default function Navbar() {
 
   return (
     <header className="mx-auto sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 ">
-      <div className="container mx-auto flex items-center h-16">
+      <div className="container mx-auto flex items-center h-16 px-2 xl:px-0">
         <div className="mr-4 hidden md:flex w-full justify-between">
           <div className="flex">
             <Link href="/" className="mr-6 flex items-center space-x-2">
@@ -108,7 +108,7 @@ export default function Navbar() {
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <DialogTitle className="hidden">Sidebar</DialogTitle>
           <SheetTrigger asChild>
-            <div className="flex items-center justify-between w-full md:hidden mx-2">
+            <div className="flex items-center justify-between w-full md:hidden">
               <Button
                 variant="ghost"
                 className="mx-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
