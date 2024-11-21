@@ -39,6 +39,11 @@ export default function Home() {
               className:
                 "text-3xl relative z-20 md:text-4xl lg:text-6xl font-bold text-center text-black dark:text-white tracking-wide ",
             },
+            {
+              text: "Lee!",
+              className:
+                "text-3xl relative z-20 md:text-4xl lg:text-6xl font-bold text-center text-black dark:text-white tracking-wide ",
+            },
           ]}
           className="pb-4"
         />
@@ -66,7 +71,7 @@ export default function Home() {
 
       <section id="experiences" className="scroll-mt-20">
         <h2 className="text-2xl font-semibold mb-4  ">Experiences</h2>
-        <ScrollArea className="h-[400px] w-full rounded-md border p-4 bg-white">
+        <ScrollArea className="h-[400px] w-full rounded-md border p-4 bg-white dark:bg-black">
           {EXPERIENCES.map((experience, index) => (
             <Card key={index} className="mb-4">
               <CardHeader>

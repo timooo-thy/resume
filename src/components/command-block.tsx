@@ -62,13 +62,13 @@ export function CommandBlock({ className, hideShortCut }: CommandBlockProps) {
       </Button>
 
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="sm:max-w-[550px]">
+        <DialogContent className="sm:max-w-[550px] h-full sm:max-h-[40vh]">
           <DialogHeader>
             <DialogTitle>Chat with AI...</DialogTitle>
           </DialogHeader>
-          <Command className="rounded-lg border shadow-md p-1">
-            <div className="relative min-h-[300px] max-h-[500px]">
-              <div className="space-y-4 py-3 px-3 min-h-[100px] max-h-[calc(100%-3rem)] overflow-y-scroll [&::-webkit-scrollbar]:hidden">
+          <Command className="rounded-lg border shadow-md p-1 min-h-[90vh] sm:min-h-[34vh]">
+            <div className="relative h-full">
+              <div className="space-y-4 py-3 px-3 max-h-[calc(100%-3rem)] overflow-y-scroll [&::-webkit-scrollbar]:hidden">
                 {messages.map((m) => (
                   <div key={m.id} className="whitespace-pre-wrap">
                     <div
@@ -83,7 +83,7 @@ export function CommandBlock({ className, hideShortCut }: CommandBlockProps) {
                             m.role === "user"
                               ? "bg-primary text-white"
                               : "bg-gray-300/50 text-black"
-                          } p-2.5 rounded-lg max-w-xs text-sm`}
+                          } p-2.5 rounded-lg max-w-xs md:text-lg`}
                         >
                           {m.content}
                         </p>

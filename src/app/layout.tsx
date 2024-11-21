@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${roboto.className} antialiased `}>
-        <div className="mx-auto dark:bg-black bg-white dark:bg-grid-small-white/[0.2] bg-grid-small-black/[0.2] min-h-dvh">
+        <div className="mx-auto dark:bg-black bg-white dark:bg-grid-small-white/[0.4] bg-grid-small-black/[0.1] min-h-dvh">
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
