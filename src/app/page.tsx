@@ -14,21 +14,43 @@ import {
   PROJECTS,
   SKILLS,
 } from "@/lib/constants";
+import { TypewriterEffect } from "@/components/type-writer";
+import { BackgroundBeamsWithCollision } from "@/components/background-beams";
+import { Cover } from "@/components/cover";
 
 export default function Home() {
   return (
-    <main className="container mx-auto p-4 space-y-6 py-10">
-      <header className="text-center mb-8">
-        <h1 className="text-4xl font-bold mb-2">Hello, I&apos;m Timothy.</h1>
-        <p className="text-xl text-muted-foreground">
+    <main className="mx-auto space-y-6 py-2 container px-2 md:px-0">
+      <BackgroundBeamsWithCollision className="my-4 flex flex-col rounded-xl h-32 md:h-[16rem]">
+        <TypewriterEffect
+          words={[
+            {
+              text: "Hello!",
+              className:
+                "text-3xl relative z-20 md:text-4xl lg:text-6xl font-bold text-center text-black dark:text-white tracking-wide",
+            },
+            {
+              text: "I'm",
+              className:
+                "text-3xl relative z-20 md:text-4xl lg:text-6xl font-bold text-center text-black dark:text-white tracking-wide",
+            },
+            {
+              text: "Timothy",
+              className:
+                "text-3xl relative z-20 md:text-4xl lg:text-6xl font-bold text-center text-black dark:text-white tracking-wide ",
+            },
+          ]}
+          className="pb-4"
+        />
+        <Cover className="md:text-xl lg:text-3xl text-muted-foreground">
           Aspiring AI Software Engineer
-        </p>
-      </header>
+        </Cover>
+      </BackgroundBeamsWithCollision>
 
       <section id="education" className="scroll-mt-20">
         <h2 className="text-2xl font-semibold mb-4">Education</h2>
         {EDUCATIONS.map((education, index) => (
-          <Card key={index}>
+          <Card key={index} className="mb-4">
             <CardHeader>
               <CardTitle>{education.degree}</CardTitle>
               <CardDescription>
@@ -43,8 +65,8 @@ export default function Home() {
       </section>
 
       <section id="experiences" className="scroll-mt-20">
-        <h2 className="text-2xl font-semibold mb-4">Experiences</h2>
-        <ScrollArea className="h-[400px] w-full rounded-md border p-4">
+        <h2 className="text-2xl font-semibold mb-4  ">Experiences</h2>
+        <ScrollArea className="h-[400px] w-full rounded-md border p-4 bg-white">
           {EXPERIENCES.map((experience, index) => (
             <Card key={index} className="mb-4">
               <CardHeader>

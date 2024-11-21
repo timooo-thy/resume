@@ -31,7 +31,7 @@ export function BlogList({
           {posts.map((post) => (
             <Card key={post._id}>
               <CardHeader>
-                <CardTitle>{post.title}</CardTitle>
+                <CardTitle className="text-lg">{post.title}</CardTitle>
               </CardHeader>
               <CardContent>
                 {post.url && (

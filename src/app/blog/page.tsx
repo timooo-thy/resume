@@ -46,7 +46,7 @@ export default async function Blog({
   const { page } = await searchParams;
 
   return (
-    <main className="py-10">
+    <main className="py-10 container mx-auto">
       <h1 className="text-4xl font-semibold mb-10 text-center">Latest</h1>
       <Suspense fallback={<AllPostSkeleton />}>
         <BlogPosts page={page ?? "1"} />

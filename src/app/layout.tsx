@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Roboto_Serif } from "next/font/google";
+import { Roboto_Condensed } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/navbar";
 
-const roboto = Roboto_Serif({ subsets: ["latin"] });
+const roboto = Roboto_Condensed({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Timothy's Portfolio",
@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${roboto.className} antialiased `}>
-        <div className="container mx-auto px-4">
+        <div className="mx-auto dark:bg-black bg-white dark:bg-grid-small-white/[0.2] bg-grid-small-black/[0.2] min-h-dvh">
           <ThemeProvider
             attribute="class"
             defaultTheme="system"

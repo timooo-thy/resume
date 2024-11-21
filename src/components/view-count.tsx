@@ -23,7 +23,7 @@ export default async function ViewCount({ slug }: ViewCountProps) {
   return (
     <div className="bg-primary/80 px-2.5 py-0.5 rounded-lg">
       <Ping />
-      <p className="text-sm text-white">
+      <p className="text-white text-sm md:text-base">
         <span className="font-bold">Views: {count}</span>
       </p>
     </div>

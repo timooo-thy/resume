@@ -27,22 +27,22 @@ export const experimental_ppr = true;
 const customComponents: PortableTextReactComponents = {
   block: {
     h1: ({ children }) => (
-      <h1 className="text-4xl font-extrabold mt-16 mb-6">{children}</h1>
+      <h1 className="text-3xl md:text-4xl font-bold mt-16 mb-6">{children}</h1>
     ),
 
     h2: ({ children }) => (
-      <h2 className="text-3xl font-bold mt-12 mb-6">{children}</h2>
+      <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-6">{children}</h2>
     ),
 
     h3: ({ children }) => (
-      <h3 className="text-2xl font-semibold mt-10 mb-4">{children}</h3>
+      <h3 className="text-xl md:text-2xl font-semibold mt-10 mb-4">
+        {children}
+      </h3>
     ),
 
-    h4: ({ children }) => (
-      <h4 className="text-xl font-medium mt-8 mb-2">{children}</h4>
+    normal: ({ children }) => (
+      <p className="text-base md:text-lg mb-1 ">{children}</p>
     ),
-
-    normal: ({ children }) => <p className="text-base mb-1 ">{children}</p>,
   },
   marks: {
     link: ({ value, children }) => (
@@ -74,16 +74,22 @@ const customComponents: PortableTextReactComponents = {
   },
   list: {
     bullet: ({ children }) => (
-      <ul className="list-disc ml-6 mb-4 text-base">{children}</ul>
+      <ul className="list-disc ml-6 mb-4 text-base md:text-lg ">{children}</ul>
     ),
 
     number: ({ children }) => (
-      <ol className="list-decimal ml-6 mb-4 text-base">{children}</ol>
+      <ol className="list-decimal ml-6 mb-4 text-base md:text-lg ">
+        {children}
+      </ol>
     ),
   },
   listItem: {
-    bullet: ({ children }) => <li className="mb-1 text-base">{children}</li>,
-    number: ({ children }) => <li className="mb-1 text-base">{children}</li>,
+    bullet: ({ children }) => (
+      <li className="mb-1 text-base md:text-lg ">{children}</li>
+    ),
+    number: ({ children }) => (
+      <li className="mb-1 text-base md:text-lg ">{children}</li>
+    ),
   },
   hardBreak: () => <br />,
   unknownMark: ({ children }) => <span>{children}</span>,
@@ -154,10 +160,10 @@ export default async function PostPage({
   }
 
   return (
-    <main className="container mx-auto py-8">
+    <main className="container mx-auto pb-8 px-2 md:px-0">
       <Link
         href="/blog"
-        className="inline-flex items-center text-sm text-muted-foreground hover:text-primary mb-8"
+        className="inline-flex items-center text-muted-foreground hover:text-black my-4 font-semibold"
       >
         <ArrowLeftIcon className="mr-2 h-4 w-4" />
         Back
@@ -175,15 +181,15 @@ export default async function PostPage({
             </div>
           )}
           <div className="p-6 sm:p-8 md:p-10">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+            <h1 className="text-3xl md:text-4xl font-bold mb-4">
               {post.title}
             </h1>
-            <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-6">
-              <div className="flex items-center">
+            <div className="flex flex-wrap items-center gap-4 text-muted-foreground mb-6">
+              <div className="flex items-center text-sm md:text-base">
                 <CalendarIcon className="mr-2 h-4 w-4" />
                 {new Date(post.publishedAt).toLocaleDateString()}
               </div>
-              <div className="flex items-center">
+              <div className="flex items-center text-sm md:text-base">
                 <ClockIcon className="mr-2 h-4 w-4" />
                 {readTime} min read
               </div>
@@ -215,8 +221,8 @@ export default async function PostPage({
                   </AvatarFallback>
                 </Avatar>
                 <div>
-                  <p className="font-semibold">{post.author.name}</p>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="font-semibold md:text-lg">{post.author.name}</p>
+                  <p className="text-muted-foreground text-sm md:text-base">
                     {post.author.bio?.[0]?.children?.[0]?.text}
                   </p>
                 </div>
