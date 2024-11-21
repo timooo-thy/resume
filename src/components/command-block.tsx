@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "./ui/dialog";
 import { useChat } from "ai/react";
 import { Input } from "./ui/input";
-import { Send, UserIcon } from "lucide-react";
+import { Send } from "lucide-react";
 import { RobotIcon } from "@sanity/icons";
 import { cn } from "@/lib/utils";
 
@@ -67,51 +67,56 @@ export function CommandBlock({ className, hideShortCut }: CommandBlockProps) {
             <DialogTitle>Chat with AI...</DialogTitle>
           </DialogHeader>
           <Command className="rounded-lg border shadow-md p-1">
-            <form className="relative" onSubmit={handleSubmit}>
-              <Input
-                className="flex h-12 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50"
-                value={input}
-                onChange={handleInputChange}
-                placeholder="Type your message..."
-                onKeyDown={(e) => {
-                  if (e.key === "Enter") {
-                    e.preventDefault();
-                    handleSubmit();
-                  }
-                }}
-              />
-              <Send className="mr-2 h-4 w-4 shrink-0 opacity-50 absolute right-1.5 bottom-4 cursor-pointer" />
-            </form>
-            <div className="space-y-4 py-3 px-5 mr-0 min-h-[100px] max-h-[300px] overflow-y-scroll [&::-webkit-scrollbar]:hidden">
-              {messages.map((m) => (
-                <div key={m.id} className="whitespace-pre-wrap">
-                  <div
-                    className={`flex flex-col ${m.role === "user" && "items-end"} mb-2`}
-                  >
+            <div className="relative min-h-[300px] max-h-[500px]">
+              <div className="space-y-4 py-3 px-3 min-h-[100px] max-h-[calc(100%-3rem)] overflow-y-scroll [&::-webkit-scrollbar]:hidden">
+                {messages.map((m) => (
+                  <div key={m.id} className="whitespace-pre-wrap">
                     <div
-                      className={`${
-                        m.role === "user" ? "text-right mr-2" : "text-left"
-                      } mb-1`}
+                      className={`flex flex-col ${m.role === "user" && "items-end"} mb-2`}
                     >
-                      {m.role === "user" ? (
-                        <UserIcon className="w-5 h-5" />
-                      ) : (
-                        <RobotIcon className="w-5 h-5" />
-                      )}
+                      <div className="mb-1 flex space-x-2">
+                        {m.role === "assistant" && (
+                          <RobotIcon className="w-5 h-5 mt-1" />
+                        )}
+                        <p
+                          className={`${
+                            m.role === "user"
+                              ? "bg-primary text-white"
+                              : "bg-gray-300/50 text-black"
+                          } p-2.5 rounded-lg max-w-xs text-sm`}
+                        >
+                          {m.content}
+                        </p>
+                      </div>
                     </div>
-                    <p
-                      className={`${
-                        m.role === "user"
-                          ? "bg-gray-700 text-white"
-                          : "bg-gray-300/50 text-black"
-                      } p-3 rounded-xl max-w-xs text-sm`}
-                    >
-                      {m.content}
-                    </p>
                   </div>
+                ))}
+                <div ref={messagesEndRef} />
+              </div>
+
+              <form
+                className="w-full absolute bottom-0 z-20 bg-white p-2"
+                onSubmit={handleSubmit}
+              >
+                <div className="flex items-center relative">
+                  <Input
+                    className="flex-grow h-12 rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50"
+                    value={input}
+                    onChange={handleInputChange}
+                    placeholder="Type your message..."
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") {
+                        e.preventDefault();
+                        handleSubmit();
+                      }
+                    }}
+                  />
+                  <Send
+                    className="absolute right-3 ml-2 h-5 w-5 shrink-0 cursor-pointer text-primary/70 hover:text-primary"
+                    onClick={handleSubmit}
+                  />
                 </div>
-              ))}
-              <div ref={messagesEndRef} />
+              </form>
             </div>
           </Command>
         </DialogContent>

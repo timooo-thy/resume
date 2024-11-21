@@ -22,11 +22,11 @@ import { CommandBlock } from "./command-block";
 import { DialogTitle } from "./ui/dialog";
 
 const resumeSections = [
-  { title: "Experience", href: "#experiences" },
-  { title: "Education", href: "#education" },
-  { title: "Skills", href: "#skills" },
-  { title: "Projects", href: "#projects" },
-  { title: "Awards", href: "#awards" },
+  { title: "Education", href: "/#education" },
+  { title: "Experience", href: "/#experiences" },
+  { title: "Projects", href: "/#projects" },
+  { title: "Skills", href: "/#skills" },
+  { title: "Awards", href: "/#awards" },
 ];
 
 export default function Navbar() {
@@ -117,7 +117,7 @@ export default function Navbar() {
                 <span className="sr-only">Toggle Menu</span>
               </Button>
               <h1 className="font-semibold md:hidden">
-                Timothy&apos;s Portfolio
+                <Link href="/">Timothy&apos;s Portfolio</Link>
               </h1>
               <ModeToggle />
             </div>
@@ -134,9 +134,6 @@ export default function Navbar() {
               <div className="flex flex-col space-y-3">
                 <MobileLink href="/blog" onOpenChange={setIsOpen}>
                   Blog
-                </MobileLink>
-                <MobileLink href="/resume" onOpenChange={setIsOpen}>
-                  Resume
                 </MobileLink>
                 {resumeSections.map((section) => (
                   <MobileLink
