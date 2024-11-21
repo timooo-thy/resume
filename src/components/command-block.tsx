@@ -8,8 +8,14 @@ import { useChat } from "ai/react";
 import { Input } from "./ui/input";
 import { Send, UserIcon } from "lucide-react";
 import { RobotIcon } from "@sanity/icons";
+import { cn } from "@/lib/utils";
 
-export function CommandBlock() {
+type CommandBlockProps = {
+  className?: string;
+  hideShortCut?: boolean;
+};
+
+export function CommandBlock({ className, hideShortCut }: CommandBlockProps) {
   const [open, setOpen] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const { messages, input, handleInputChange, handleSubmit } = useChat({
@@ -37,15 +43,20 @@ export function CommandBlock() {
   return (
     <>
       <Button
-        className="bg-current w-36 hover:bg-gray-100 dark:hover:bg-black px-2 border"
+        className={cn(
+          "bg-current w-36 hover:bg-gray-100 dark:hover:bg-black px-2 border",
+          className
+        )}
         onClick={() => setOpen(true)}
       >
         <div className="flex items-center justify-between w-full">
           <span className="text-muted-foreground text-xs font-extralight">
             Chat with AI...
           </span>
-          <kbd className="pointer-events-none inline-flex h-full select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
-            <span className="text-xs">⌘</span>K
+          <kbd
+            className={`${hideShortCut && "hidden"} inline-flex pointer-events-none h-full select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100`}
+          >
+            <span className="text-xs">⌘</span> K
           </kbd>
         </div>
       </Button>

@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu } from "lucide-react";
+import { File, Menu } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -22,10 +22,11 @@ import { CommandBlock } from "./command-block";
 import { DialogTitle } from "./ui/dialog";
 
 const resumeSections = [
-  { title: "Experience", href: "/resume/experience" },
-  { title: "Education", href: "/resume/education" },
-  { title: "Skills", href: "/resume/skills" },
-  { title: "Projects", href: "/resume/projects" },
+  { title: "Experience", href: "#experiences" },
+  { title: "Education", href: "#education" },
+  { title: "Skills", href: "#skills" },
+  { title: "Projects", href: "#projects" },
+  { title: "Awards", href: "#awards" },
 ];
 
 export default function Navbar() {
@@ -53,15 +54,18 @@ export default function Navbar() {
                         <NavigationMenuLink asChild>
                           <a
                             className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                            href="/resume"
+                            href="/Timothy_Resume.pdf"
+                            download
                           >
                             <div className="mb-2 mt-4 text-lg font-medium">
                               Resume
                             </div>
-                            <p className="text-sm leading-tight text-muted-foreground">
-                              View my professional experience, skills, and
-                              achievements.
-                            </p>
+                            <div className="flex space-x-2 items-center">
+                              <File className="h-8 w-8" />
+                              <p className="text-sm leading-tight text-muted-foreground">
+                                Click here to download
+                              </p>
+                            </div>
                           </a>
                         </NavigationMenuLink>
                       </li>
@@ -115,9 +119,7 @@ export default function Navbar() {
               <h1 className="font-semibold md:hidden">
                 Timothy&apos;s Portfolio
               </h1>
-              <div className="md:hidden">
-                <ModeToggle />
-              </div>
+              <ModeToggle />
             </div>
           </SheetTrigger>
           <SheetContent side="left" className="pr-0">
@@ -130,6 +132,9 @@ export default function Navbar() {
             </MobileLink>
             <div className="my-4 h-[calc(100vh-8rem)] overflow-y-auto">
               <div className="flex flex-col space-y-3">
+                <MobileLink href="/blog" onOpenChange={setIsOpen}>
+                  Blog
+                </MobileLink>
                 <MobileLink href="/resume" onOpenChange={setIsOpen}>
                   Resume
                 </MobileLink>
@@ -142,12 +147,10 @@ export default function Navbar() {
                     {section.title}
                   </MobileLink>
                 ))}
-                <MobileLink href="/blog" onOpenChange={setIsOpen}>
-                  Blog
-                </MobileLink>
                 <MobileLink href="/contact" onOpenChange={setIsOpen}>
                   Contact
                 </MobileLink>
+                <CommandBlock className="w-60" hideShortCut={true} />
               </div>
             </div>
           </SheetContent>
