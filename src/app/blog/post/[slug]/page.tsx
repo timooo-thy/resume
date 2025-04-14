@@ -21,6 +21,7 @@ import ShareButton from "@/components/share-button";
 import { cache, Suspense } from "react";
 import ViewCount from "@/components/view-count";
 import { Skeleton } from "@/components/ui/skeleton";
+import ScrollToTop from "@/components/scroll-to-top";
 
 export const experimental_ppr = true;
 
