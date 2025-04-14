@@ -91,21 +91,28 @@ const customComponents: PortableTextReactComponents = {
               </tr>
             </thead>
             <tbody>
-              {bodyRows.map((row: any, rowIndex: number) => (
-                <tr
-                  key={rowIndex}
-                  className="hover:bg-muted/60 transition-colors"
-                >
-                  {row.cells.map((cell: string, cellIndex: number) => (
-                    <td
-                      key={cellIndex}
-                      className="px-4 py-3 border-r last:border-r-0 border-muted/40"
-                    >
-                      {cell}
-                    </td>
-                  ))}
-                </tr>
-              ))}
+              {bodyRows.map(
+                (
+                  row: {
+                    cells: string[];
+                  },
+                  rowIndex: number
+                ) => (
+                  <tr
+                    key={rowIndex}
+                    className="hover:bg-muted/60 transition-colors"
+                  >
+                    {row.cells.map((cell: string, cellIndex: number) => (
+                      <td
+                        key={cellIndex}
+                        className="px-4 py-3 border-r last:border-r-0 border-muted/40"
+                      >
+                        {cell}
+                      </td>
+                    ))}
+                  </tr>
+                )
+              )}
             </tbody>
           </table>
         </div>
