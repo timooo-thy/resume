@@ -196,7 +196,7 @@ export default function Home() {
                 whileHover={{ y: -8, scale: 1.02 }}
                 className="h-full"
               >
-                <Link href={project.url}>
+                <Link href={project.url} target="_blank">
                   <Card className="h-full flex flex-col border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 overflow-hidden">
                     <CardHeader className="relative z-10">
                       <CardTitle className="text-xl font-bold">

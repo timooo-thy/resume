@@ -20,6 +20,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { ModeToggle } from "./mode-toggle";
 import { DialogTitle } from "./ui/dialog";
 import Image from "next/image";
+import { CommandBlock } from "./command-block";
 
 const resumeSections = [
   { title: "Education", href: "/#education" },
@@ -97,6 +98,7 @@ export default function Navbar() {
                     href="https://short.timooothy.me"
                     legacyBehavior
                     passHref
+                    target="_blank"
                   >
                     <NavigationMenuLink
                       className={navigationMenuTriggerStyle()}
@@ -176,6 +178,7 @@ export default function Navbar() {
                 <MobileLink
                   href="https://short.timooothy.me"
                   onOpenChange={setIsOpen}
+                  target="_blank"
                 >
                   URL Shortener
                 </MobileLink>
@@ -222,6 +225,7 @@ interface MobileLinkProps extends React.PropsWithChildren {
   href: string;
   onOpenChange?: (open: boolean) => void;
   className?: string;
+  target?: string;
 }
 
 function MobileLink({
@@ -229,6 +233,7 @@ function MobileLink({
   onOpenChange,
   className,
   children,
+  target,
   ...props
 }: MobileLinkProps) {
   const pathname = usePathname();
@@ -238,6 +243,7 @@ function MobileLink({
       onClick={() => {
         onOpenChange?.(false);
       }}
+      target={target}
       className={cn(
         "text-foreground/70 transition-colors hover:text-foreground",
         pathname === href && "text-foreground",
