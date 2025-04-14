@@ -20,7 +20,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { ModeToggle } from "./mode-toggle";
 import { DialogTitle } from "./ui/dialog";
 import Image from "next/image";
-import { CommandBlock } from "./command-block";
+// import { CommandBlock } from "./command-block";
 
 const resumeSections = [
   { title: "Education", href: "/#education" },
