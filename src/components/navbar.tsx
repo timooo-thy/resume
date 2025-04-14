@@ -117,7 +117,7 @@ export default function Navbar() {
               </NavigationMenuList>
             </NavigationMenu>
           </div>
-          <div className="flex space-x-4">
+          <div className="flex space-x-4 justify-center items-center">
             {/* <CommandBlock /> */}
             <ModeToggle />
           </div>
