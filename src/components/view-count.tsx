@@ -6,9 +6,10 @@ const redis = Redis.fromEnv();
 
 type ViewCountProps = {
   slug: string;
+  readTime: number;
 };
 
-export default async function ViewCount({ slug }: ViewCountProps) {
+export default async function ViewCount({ slug, readTime }: ViewCountProps) {
   const ip = (await headers()).get("x-forwarded-for") || "127.0.0.1";
   let count = await redis.incr(slug);
 
@@ -16,7 +17,7 @@ export default async function ViewCount({ slug }: ViewCountProps) {
     count = await redis.decr(slug);
   } else {
     await redis.set(ip + slug, "true", {
-      ex: 60,
+      ex: readTime * 60,
     });
   }
 

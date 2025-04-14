@@ -28,76 +28,76 @@ export const experimental_ppr = true;
 const customComponents: PortableTextReactComponents = {
   block: {
     h1: ({ children }) => (
-      <h1 className="text-3xl md:text-4xl font-bold mt-16 mb-6">{children}</h1>
+      <h1 className="text-3xl font-bold mt-12 mb-6">{children}</h1>
     ),
-
     h2: ({ children }) => (
-      <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-6">{children}</h2>
-    ),
-
-    h3: ({ children }) => (
-      <h3 className="text-xl md:text-2xl font-semibold mt-10 mb-4">
+      <h2 className="text-2xl font-bold mt-6 mb-4">
         {children}
-      </h3>
+        <hr className="border-t border-gray-300 mt-1" />
+      </h2>
     ),
-
-    normal: ({ children }) => (
-      <p className="text-base md:text-lg mb-1 ">{children}</p>
+    h3: ({ children }) => (
+      <h3 className="text-xl font-semibold mt-6 mb-4">{children}</h3>
     ),
+    normal: ({ children }) => <p className="text-base mb-2">{children}</p>,
   },
+
   marks: {
     link: ({ value, children }) => (
       <Link
         href={value?.href}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-blue-500 underline hover:text-blue-700"
+        className="text-primary underline hover:text-primary/80 transition-colors"
       >
         {children}
       </Link>
     ),
   },
+
   types: {
     image: ({ value }) => (
-      <div className="my-4">
+      <div className="my-8">
         <Image
           src={value?.asset?.url}
           alt={value?.alt || "Image"}
           width={800}
           height={600}
-          className="rounded-lg"
+          className="rounded-lg mx-auto"
         />
       </div>
     ),
-    code: ({ value }) => {
-      return <CodeBlock value={value} />;
-    },
+    code: ({ value }) => (
+      <div className="my-2">
+        <CodeBlock value={value} />
+      </div>
+    ),
   },
+
   list: {
     bullet: ({ children }) => (
-      <ul className="list-disc ml-6 mb-4 text-base md:text-lg ">{children}</ul>
+      <ul className="list-disc pl-6 mb-6 text-base space-y-2">{children}</ul>
     ),
+    number: ({ children }) => (
+      <ol className="list-decimal pl-6 mb-6 text-base space-y-2">{children}</ol>
+    ),
+  },
 
-    number: ({ children }) => (
-      <ol className="list-decimal ml-6 mb-4 text-base md:text-lg ">
-        {children}
-      </ol>
-    ),
-  },
   listItem: {
-    bullet: ({ children }) => (
-      <li className="mb-1 text-base md:text-lg ">{children}</li>
-    ),
-    number: ({ children }) => (
-      <li className="mb-1 text-base md:text-lg ">{children}</li>
-    ),
+    bullet: ({ children }) => <li>{children}</li>,
+    number: ({ children }) => <li>{children}</li>,
   },
+
   hardBreak: () => <br />,
   unknownMark: ({ children }) => <span>{children}</span>,
-  unknownType: ({ value }) => <div>Unknown type: {JSON.stringify(value)}</div>,
-  unknownBlockStyle: ({ children }) => <div>{children}</div>,
-  unknownList: ({ children }) => <ul>{children}</ul>,
-  unknownListItem: ({ children }) => <li>{children}</li>,
+  unknownType: ({ value }) => (
+    <div className="p-4 border border-yellow-300 bg-yellow-50 rounded my-4">
+      Unknown content type: {JSON.stringify(value)}
+    </div>
+  ),
+  unknownBlockStyle: ({ children }) => <div className="my-4">{children}</div>,
+  unknownList: ({ children }) => <ul className="pl-6 my-4">{children}</ul>,
+  unknownListItem: ({ children }) => <li className="mb-2">{children}</li>,
 };
 
 const getPost = cache(async (params: { slug: string }) => {
@@ -161,7 +161,7 @@ export default async function PostPage({
   }
 
   return (
-    <main className="container mx-auto pb-8 px-2 xl:px-0">
+    <main className="container mx-auto pb-8 px-2 lg:w-3/4 xl:w-3/5">
       <Link
         href="/blog"
         className="inline-flex items-center text-muted-foreground hover:text-black my-4 font-semibold"
@@ -197,7 +197,7 @@ export default async function PostPage({
               <Suspense
                 fallback={<Skeleton className="w-20 h-6 bg-gray-200" />}
               >
-                <ViewCount slug={post.slug.current} />
+                <ViewCount slug={post.slug.current} readTime={readTime} />
               </Suspense>
             </div>
             <div className="flex items-center justify-between w-full mb-8">
