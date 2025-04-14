@@ -23,9 +23,9 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="mx-auto px-4 sm:px-6 space-y-24">
+    <main className="px-4 sm:px-6 space-y-24">
       <section className="w-full">
-        <AuroraBackground className="h-[24rem] lg:h-[40rem]">
+        <AuroraBackground className="h-[24rem] lg:h-[40rem] mx-[-4rem]">
           <TypewriterEffect
             words={[
               {

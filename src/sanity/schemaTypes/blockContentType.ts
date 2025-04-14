@@ -75,5 +75,8 @@ export const blockContentType = defineType({
     defineArrayMember({
       type: "code",
     }),
+    defineArrayMember({
+      type: "table",
+    }),
   ],
 });

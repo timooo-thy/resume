@@ -72,6 +72,45 @@ const customComponents: PortableTextReactComponents = {
         <CodeBlock value={value} />
       </div>
     ),
+    table: ({ value }) => {
+      if (!value?.rows) return null;
+
+      const headerRow = value.rows[0];
+      const bodyRows = value.rows.slice(1);
+
+      return (
+        <div className="my-4 overflow-x-auto">
+          <table className="w-full border border-muted/30 rounded-2xl overflow-hidden text-sm bg-muted/40 divide-y divide-muted/40">
+            <thead className="bg-muted/100">
+              <tr>
+                {headerRow?.cells.map((cell: string, i: number) => (
+                  <th key={i} className="text-left px-4 py-3 font-bold">
+                    {cell}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {bodyRows.map((row: any, rowIndex: number) => (
+                <tr
+                  key={rowIndex}
+                  className="hover:bg-muted/60 transition-colors"
+                >
+                  {row.cells.map((cell: string, cellIndex: number) => (
+                    <td
+                      key={cellIndex}
+                      className="px-4 py-3 border-r last:border-r-0 border-muted/40"
+                    >
+                      {cell}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
+    },
   },
 
   list: {
@@ -161,7 +200,7 @@ export default async function PostPage({
   }
 
   return (
-    <main className="container mx-auto pb-8 px-2 lg:w-3/4 xl:w-3/5">
+    <main className="container mx-auto pb-8 px-2 lg:w-3/4 xl:w-3/5 bg-background">
       <Link
         href="/blog"
         className="inline-flex items-center text-muted-foreground hover:text-black my-4 font-semibold"
