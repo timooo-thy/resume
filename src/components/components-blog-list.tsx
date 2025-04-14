@@ -25,53 +25,51 @@ export function BlogList({
   postsPerPage,
 }: BlogListProps) {
   return (
-    <section>
-      <div className="min-h-[900px]">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-          {posts.map((post) => (
-            <Card key={post._id}>
-              <CardHeader>
-                <CardTitle className="text-lg">{post.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                {post.url && (
-                  <Image
-                    src={post.url}
-                    alt={post.title ?? ""}
-                    width={2400}
-                    height={1000}
-                    quality={100}
-                    className="w-full h-48 object-cover mb-4 rounded-lg"
-                  />
-                )}
-                <p className="text-sm text-muted-foreground">
-                  By {post.author?.name} | {post.publishedAt}
-                </p>
-                <div className="flex flex-wrap gap-2 mt-2">
-                  {post.categories?.map((category) => (
-                    <span
-                      key={category.title}
-                      className="bg-secondary text-secondary-foreground px-2 py-1 rounded-full text-xs"
-                    >
-                      {category.title}
-                    </span>
-                  ))}
-                </div>
-              </CardContent>
-              <CardFooter>
-                <Link href={`/blog/post/${post.slug?.current}`}>
-                  <Button variant="outline">Read More</Button>
-                </Link>
-              </CardFooter>
-            </Card>
-          ))}
-        </div>
+    <div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        {posts.map((post) => (
+          <Card key={post._id}>
+            <CardHeader>
+              <CardTitle className="text-lg">{post.title}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              {post.url && (
+                <Image
+                  src={post.url}
+                  alt={post.title ?? ""}
+                  width={2400}
+                  height={1000}
+                  quality={100}
+                  className="w-full h-36 object-cover mb-4 rounded-lg"
+                />
+              )}
+              <p className="text-sm text-muted-foreground">
+                By {post.author?.name} | {post.publishedAt}
+              </p>
+              <div className="flex flex-wrap gap-2 mt-2">
+                {post.categories?.map((category) => (
+                  <span
+                    key={category.title}
+                    className="bg-secondary text-secondary-foreground px-2 py-1 rounded-full text-xs"
+                  >
+                    {category.title}
+                  </span>
+                ))}
+              </div>
+            </CardContent>
+            <CardFooter>
+              <Link href={`/blog/post/${post.slug?.current}`}>
+                <Button variant="outline">Read More</Button>
+              </Link>
+            </CardFooter>
+          </Card>
+        ))}
       </div>
       <Pagination
         currentPage={currentPage}
         postsPerPage={postsPerPage}
         totalPosts={totalPosts}
       />
-    </section>
+    </div>
   );
 }

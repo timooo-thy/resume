@@ -33,8 +33,8 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
-    <header className="mx-auto sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 ">
-      <div className="container mx-auto flex items-center h-16 px-2 xl:px-0">
+    <header className="mx-4 sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="container mx-auto flex items-center h-20">
         <div className="mr-4 hidden md:flex w-full justify-between">
           <div className="flex">
             <Link href="/" className="mr-6 flex items-center space-x-2">
@@ -88,20 +88,11 @@ export default function Navbar() {
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
-                <NavigationMenuItem>
-                  <Link href="/contact" legacyBehavior passHref>
-                    <NavigationMenuLink
-                      className={navigationMenuTriggerStyle()}
-                    >
-                      Contact
-                    </NavigationMenuLink>
-                  </Link>
-                </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
           </div>
           <div className="flex space-x-4">
-            <CommandBlock />
+            {/* <CommandBlock /> */}
             <ModeToggle />
           </div>
         </div>
@@ -144,10 +135,7 @@ export default function Navbar() {
                     {section.title}
                   </MobileLink>
                 ))}
-                <MobileLink href="/contact" onOpenChange={setIsOpen}>
-                  Contact
-                </MobileLink>
-                <CommandBlock className="w-60" hideShortCut={true} />
+                {/* <CommandBlock className="w-60" hideShortCut={true} /> */}
               </div>
             </div>
           </SheetContent>

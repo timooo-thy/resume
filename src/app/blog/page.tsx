@@ -46,8 +46,10 @@ export default async function Blog({
   const { page } = await searchParams;
 
   return (
-    <main className="py-10 container mx-auto px-2 xl:px-0">
-      <h1 className="text-4xl font-semibold mb-10 text-center">Latest</h1>
+    <main className="py-8 container mx-auto px-2 xl:px-0">
+      <h1 className="text-4xl font-semibold mb-10 text-center">
+        My Personal Blog
+      </h1>
       <Suspense fallback={<AllPostSkeleton />}>
         <BlogPosts page={page ?? "1"} />
       </Suspense>

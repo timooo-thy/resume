@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Roboto_Condensed } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
 import { ThemeProvider } from "@/components/theme-provider";
-import Navbar from "@/components/navbar";
+import { ClientLayout } from "@/components/client-layout";
 
-const roboto = Roboto_Condensed({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Timothy's Portfolio",
@@ -19,16 +19,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${roboto.className} antialiased `}>
-        <div className="mx-auto dark:bg-black bg-white dark:bg-grid-small-white/[0.4] bg-grid-small-black/[0.1] min-h-dvh">
+      <body className={`${inter.className} antialiased `}>
+        <div className="mx-auto dark:bg-black bg-white min-h-dvh">
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
           >
-            <Navbar />
-            {children}
+            <ClientLayout>
+              {children}
+              <Toaster richColors />
+            </ClientLayout>
             <Toaster richColors />
           </ThemeProvider>
         </div>

@@ -45,7 +45,7 @@ export const PROJECTS = [
   {
     name: "News Classification 2023",
     description:
-      "Harnessed the power of natural language processing using Keras, machine learning and deep learning to scrutinise news articles’ credibility, yielding 95% accuracy rate on a dedicated dataset.",
+      "Harnessed the power of natural language processing using Keras, machine learning and deep learning to scrutinise news articles' credibility, yielding 95% accuracy rate on a dedicated dataset.",
     technologies: ["Keras", "Machine Learning", "Deep Learning"],
   },
 ];
@@ -55,16 +55,16 @@ export const EXPERIENCES = [
     role: "Machine Learning Researcher Intern",
     company:
       "Digital Trust Centre, Nanyang Technological University, Singapore",
-    period: "Jul 2024 – Current",
+    period: "Jul 2024 – Dec 2024",
     responsibilities: [
       "Led development of secure AI systems, researching and implementing ML defences against adversarial attacks via Machine Unlearning.",
-      "Research areas include Machine Unlearning, Backdoor Detection and Privacy-Enhancing Technologies in AI.",
+      "Research areas include Machine Unlearning, Backdoor Detection in AI.",
     ],
   },
   {
     role: "Software Engineer Intern",
     company: "ShopBack, Singapore",
-    period: "Jul 2024 – Current",
+    period: "Jul 2024 – Dec 2024",
     responsibilities: [
       "Spearheaded implementation of Generative AI solutions to optimise internal operations, reducing average handling time (AHT) from 365 seconds to 200 seconds, resulting in a 45% improvement in agent efficiency and customer satisfaction.",
       "Developed a prompt management version control platform integrating Salesforce and Zendesk, resulting in 80% improved consistency, 60% faster workflows, and 30% higher first-contact resolution rates across all customer service channels.",
@@ -103,42 +103,38 @@ export const EXPERIENCES = [
 
 export const EDUCATIONS = [
   {
-    degree: "Bachelor of Computing - Data Science and Artificial Intelligence",
+    degree: "Bachelor of Science - Data Science and Artificial Intelligence",
     school: "Nanyang Technological University",
     year: "Aug 2022 - Current",
     description:
-      "Expected Honours (Highest Distinction). Specialised in Artificial Intelligence and Web Technologies.",
+      "CGPA: 4.73/5.00. Exchange: Singapore Management University (Grade: 4.0/4.0), University of Waterloo.",
   },
   {
     degree: "Diploma with Merit - Engineering Science",
     school: "Ngee Ann Polytechnic, Singapore",
     year: "Apr 2017 - Apr 2020",
     description:
-      "Graduated with Diploma Plus in Advanced Engineering Mathematics. GPA: 3.99/4.00. Awarded Terasaki Electric Medal, Ngee Ann Scholarship.",
+      "CGPA: 3.99/4.00. Awards: Terasaki Electric Medal, Ngee Ann Scholarship. Diploma Plus in Advanced Engineering Mathematics.",
   },
 ];
 
 export const SKILLS = [
-  "JavaScript",
   "TypeScript",
-  "Node.js",
   "Python",
+  "Golang",
+  "JavaScript",
   "SQL",
   "NoSQL",
   "Express.js",
-  "React.js",
-  "Vue.js",
   "Next.js",
+  "React.js",
+  "Nuxt.js",
   "Langchain",
-  "Figma",
-  "R",
-  "Git",
   "Docker",
+  "R",
+  "Flask",
   "Microsoft Azure",
-  "AWS",
   "Google Cloud Platform",
-  "Tensorflow",
-  "Pytorch",
 ];
 
 export const AWARDS = [
@@ -148,6 +144,8 @@ export const AWARDS = [
   "SimplifyNext RPA x Gen AI 2024 (1st Place)",
   "DSTA BrainHack 2024 (1st Runner Up)",
   "GIC Code To Impact 2024 (2nd Runner Up)",
-  "Exchange: Singapore Management University (Grade: 4.3/4.0)",
-  "Certifications: The Complete Web Development Bootcamp, Google Analytics Specialisation, Google UX Specialisation, MySQL for Data Analytics and Business Intelligence, R Programming",
+  "The Complete Web Development Bootcamp",
+  "Google Analytics Specialisation",
+  "Google UX Specialisation",
+  "MySQL for Data Analytics and Business Intelligence",
 ];
