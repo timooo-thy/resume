@@ -1,5 +1,18 @@
 export const PROJECTS = [
   {
+    name: "HTX Sentinel 2024",
+    description:
+      "Developed a comprehensive security platform featuring real-time object detection using YOLOv11, Llama 3.2, Florence, and SAM2 models. Implemented an automated training pipeline for CV models and built an interactive admin dashboard with live patrol mapping and incident tracking. Leveraged DeepSort for object reidentification to support efficient policing operations.",
+    technologies: ["YOLOv11", "Llama 3.2", "Florence", "SAM2", "DeepSort"],
+  },
+  {
+    name: "URL Shortener 2024",
+    description:
+      "Developed a URL shortener using Golang and PostgreSQL, implementing a RESTful API for efficient URL management. Enhanced user experience with link expiry and fast redirects with Redis cache. Deployed on Vercel for scalability and reliability.",
+    technologies: ["Golang", "Nextjs", "Redis", "PostgreSQL", "Prisma"],
+  },
+
+  {
     name: "Recommendation System Anomaly Detection 2024",
     description:
       "Competed in a machine learning competition, achieving a 94% anomaly detection AUC-ROC score by employing deep neural networks, logistic regression, and one-class SVM. Enhanced model performance through extensive feature engineering, utilising techniques such as SMOTE and ELU, successfully identifying and mitigating anomalies in a recommendation system.",
@@ -9,7 +22,7 @@ export const PROJECTS = [
     name: "SG Read Already? 2023",
     description:
       "Developed and deployed 'SG read already?', a web application enhancing accessibility with document summarisation and scan-to-speech for the visually impaired, using Next.js. Led the creation of an accessible platform for enhanced document understanding, catering to elderlies and individuals with visual challenges, demonstrating commitment to digital inclusivity.",
-    technologies: ["Next.js"],
+    technologies: ["Next.js", "OpenAI API"],
   },
   {
     name: "AI Product Chatbot 2023",
@@ -150,6 +163,7 @@ export const AWARDS = [
   "SimplifyNext RPA x Gen AI 2024 (1st Place)",
   "DSTA BrainHack 2024 (1st Runner Up)",
   "GIC Code To Impact 2024 (2nd Runner Up)",
+  "HTX HacX 2024 (3rd Runner Up)",
   "The Complete Web Development Bootcamp",
   "Google Analytics Specialisation",
   "Google UX Specialisation",

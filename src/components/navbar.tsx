@@ -87,6 +87,28 @@ export default function Navbar() {
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <Link
+                    href="https://short.timooothy.me"
+                    legacyBehavior
+                    passHref
+                  >
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
+                    >
+                      URL Shortener
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <Link href="/contact" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
+                    >
+                      Contact
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
           </div>
@@ -134,6 +156,15 @@ export default function Navbar() {
                     {section.title}
                   </MobileLink>
                 ))}
+                <MobileLink
+                  href="https://short.timooothy.me"
+                  onOpenChange={setIsOpen}
+                >
+                  URL Shortener
+                </MobileLink>
+                <MobileLink href="/contact" onOpenChange={setIsOpen}>
+                  Contact
+                </MobileLink>
                 {/* <CommandBlock className="w-60" hideShortCut={true} /> */}
               </div>
             </div>
