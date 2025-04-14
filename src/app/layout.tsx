@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ClientLayout } from "@/components/client-layout";
 import ScrollToTop from "@/components/scroll-to-top";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,6 +31,7 @@ export default function RootLayout({
           >
             <ClientLayout>
               {children}
+              <Analytics />
               <ScrollToTop />
               <Toaster richColors />
             </ClientLayout>
