@@ -135,9 +135,8 @@ export default function Home() {
                 viewport={{ once: true }}
                 whileHover={{ y: -2 }}
               >
-                <Card className="border-l-4 border-l-blue-500 shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden group">
-                  <div className="absolute inset-0 bg-gradient-to-r from-green-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <CardHeader className="pb-2 relative z-10">
+                <Card className="border-l-4 border-l-blue-500 shadow-md hover:shadow-lg transition-all duration-300">
+                  <CardHeader className="pb-2">
                     <div className="flex justify-between items-start flex-col sm:flex-row gap-2">
                       <div>
                         <CardTitle className="text-xl font-bold">
@@ -147,15 +146,12 @@ export default function Home() {
                           {experience.company}
                         </CardDescription>
                       </div>
-                      <Badge
-                        variant="outline"
-                        className="px-3 py-1 bg-white/50 dark:bg-black/50 backdrop-blur-sm"
-                      >
+                      <Badge variant="outline" className="px-3 py-1">
                         {experience.period}
                       </Badge>
                     </div>
                   </CardHeader>
-                  <CardContent className="relative z-10">
+                  <CardContent>
                     <ul className="list-disc pl-5 space-y-1 text-gray-700 dark:text-gray-300">
                       {experience.responsibilities.map((resp, respIndex) => (
                         <li key={respIndex}>{resp}</li>
@@ -196,10 +192,9 @@ export default function Home() {
                 whileHover={{ y: -8, scale: 1.02 }}
                 className="h-full"
               >
-                <Card className="h-full flex flex-col border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 overflow-hidden group">
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <Card className="h-full flex flex-col border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 overflow-hidden">
                   <CardHeader className="relative z-10">
-                    <CardTitle className="text-xl font-bold group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-300">
+                    <CardTitle className="text-xl font-bold">
                       {project.name}
                     </CardTitle>
                     <CardDescription className="line-clamp-2">
@@ -212,7 +207,7 @@ export default function Home() {
                         <Badge
                           key={techIndex}
                           variant="secondary"
-                          className="bg-gray-100 dark:bg-gray-800 group-hover:bg-purple-100 dark:group-hover:bg-purple-900/30 transition-colors duration-300"
+                          className="bg-gray-100 dark:bg-gray-800"
                         >
                           {tech}
                         </Badge>
@@ -290,7 +285,6 @@ export default function Home() {
                     >
                       {skill}
                     </Badge>
-                    <div className="absolute inset-0 bg-white/20 dark:bg-white/5 rounded-lg blur-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
                   </motion.div>
                 );
               })}

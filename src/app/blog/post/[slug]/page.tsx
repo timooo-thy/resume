@@ -249,6 +249,7 @@ export default async function PostPage({
           </div>
         </article>
       )}
+      <ScrollToTop />
     </main>
   );
 }
