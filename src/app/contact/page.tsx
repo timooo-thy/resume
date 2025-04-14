@@ -8,8 +8,8 @@ export default function Contact() {
           Contact Me
         </h1>
         <p className="text-center text-gray-600 mb-12">
-          Let's connect! Feel free to reach out through any of the following
-          channels.
+          Let&apos;s connect! Feel free to reach out through any of the
+          following channels.
         </p>
 
         <div className="flex justify-center space-x-8 mb-12 ">
