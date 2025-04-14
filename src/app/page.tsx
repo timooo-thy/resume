@@ -19,6 +19,7 @@ import { TypewriterEffect } from "@/components/type-writer";
 import { Cover } from "@/components/cover";
 import { AuroraBackground } from "@/components/aurora-background";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -98,6 +99,9 @@ export default function Home() {
                     </div>
                   </CardHeader>
                   <CardContent>
+                    <p className="text-gray-600 dark:text-gray-400">
+                      {education.gpa}
+                    </p>
                     <p className="text-gray-600 dark:text-gray-400">
                       {education.description}
                     </p>
@@ -192,29 +196,31 @@ export default function Home() {
                 whileHover={{ y: -8, scale: 1.02 }}
                 className="h-full"
               >
-                <Card className="h-full flex flex-col border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 overflow-hidden">
-                  <CardHeader className="relative z-10">
-                    <CardTitle className="text-xl font-bold">
-                      {project.name}
-                    </CardTitle>
-                    <CardDescription className="line-clamp-2">
-                      {project.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="mt-auto relative z-10">
-                    <div className="flex flex-wrap gap-2 mt-4">
-                      {project.technologies.map((tech, techIndex) => (
-                        <Badge
-                          key={techIndex}
-                          variant="secondary"
-                          className="bg-gray-100 dark:bg-gray-800"
-                        >
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
+                <Link href={project.url}>
+                  <Card className="h-full flex flex-col border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 overflow-hidden">
+                    <CardHeader className="relative z-10">
+                      <CardTitle className="text-xl font-bold">
+                        {project.name}
+                      </CardTitle>
+                      <CardDescription className="line-clamp-2">
+                        {project.description}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent className="mt-auto relative z-10">
+                      <div className="flex flex-wrap gap-2 mt-4">
+                        {project.technologies.map((tech, techIndex) => (
+                          <Badge
+                            key={techIndex}
+                            variant="secondary"
+                            className="bg-gray-100 dark:bg-gray-800"
+                          >
+                            {tech}
+                          </Badge>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
               </motion.div>
             ))}
           </div>

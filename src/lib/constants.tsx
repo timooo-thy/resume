@@ -4,12 +4,14 @@ export const PROJECTS = [
     description:
       "Developed a comprehensive security platform featuring real-time object detection using YOLOv11, Llama 3.2, Florence, and SAM2 models. Implemented an automated training pipeline for CV models and built an interactive admin dashboard with live patrol mapping and incident tracking. Leveraged DeepSort for object reidentification to support efficient policing operations.",
     technologies: ["YOLOv11", "Llama 3.2", "Florence", "SAM2", "DeepSort"],
+    url: "https://github.com/timooo-thy/htx-hackx",
   },
   {
     name: "URL Shortener 2024",
     description:
       "Developed a URL shortener using Golang and PostgreSQL, implementing a RESTful API for efficient URL management. Enhanced user experience with link expiry and fast redirects with Redis cache. Deployed on Vercel for scalability and reliability.",
     technologies: ["Golang", "Nextjs", "Redis", "PostgreSQL", "Prisma"],
+    url: "https://github.com/timooo-thy/url-shortener-go",
   },
 
   {
@@ -17,18 +19,21 @@ export const PROJECTS = [
     description:
       "Competed in a machine learning competition, achieving a 94% anomaly detection AUC-ROC score by employing deep neural networks, logistic regression, and one-class SVM. Enhanced model performance through extensive feature engineering, utilising techniques such as SMOTE and ELU, successfully identifying and mitigating anomalies in a recommendation system.",
     technologies: ["Deep Neural Networks", "Logistic Regression"],
+    url: "https://github.com/timooo-thy/CS421-ML-Competition",
   },
   {
     name: "SG Read Already? 2023",
     description:
       "Developed and deployed 'SG read already?', a web application enhancing accessibility with document summarisation and scan-to-speech for the visually impaired, using Next.js. Led the creation of an accessible platform for enhanced document understanding, catering to elderlies and individuals with visual challenges, demonstrating commitment to digital inclusivity.",
     technologies: ["Next.js", "OpenAI API"],
+    url: "https://github.com/timooo-thy/sg-read-already",
   },
   {
     name: "AI Product Chatbot 2023",
     description:
       "Designed a conversational AI Streamlit Python app using Langchain and Hugging Face models. Enhanced user experience by incorporating features like Conversational Memory, dynamic interaction, and session management, improving context awareness and user experience. Utilised Retrieval Augmented Generation for precise and relevant real-time FAQ responses.",
     technologies: ["Streamlit", "Python", "Langchain", "Hugging Face"],
+    url: "https://github.com/timooo-thy/pyChatBot",
   },
   {
     name: "Singapore University Guide 2023",
@@ -42,24 +47,28 @@ export const PROJECTS = [
       "OAuth",
       "OpenAI API",
     ],
+    url: "https://github.com/timooo-thy/university-guide",
   },
   {
     name: "AI Text Summariser 2023",
     description:
       "Integrated SERP and OpenAI's GPT API in Python to automate article curation and summarisation for optimised Instagram content, employing Langchain for strategic information distillation. Enhanced social media engagement by transforming AI-condensed articles into compelling Instagram posts with targeted hashtags for amplified reach.",
     technologies: ["Python", "SERP API", "OpenAI API", "Langchain"],
+    url: "https://github.com/timooo-thy/text-summariser",
   },
   {
     name: "AI Image Detection 2023",
     description:
       "Developed an interactive Streamlit Python app designed to enhance users' image journey by offering advanced features such as object detection, image captioning, and metadata tagging.",
     technologies: ["Streamlit", "Python"],
+    url: "https://github.com/timooo-thy/image-detection",
   },
   {
     name: "News Classification 2023",
     description:
       "Harnessed the power of natural language processing using Keras, machine learning and deep learning to scrutinise news articles' credibility, yielding 95% accuracy rate on a dedicated dataset.",
     technologies: ["Keras", "Machine Learning", "Deep Learning"],
+    url: "https://github.com/timooo-thy/fake-real-news-classifier",
   },
 ];
 
@@ -125,15 +134,17 @@ export const EDUCATIONS = [
     degree: "Bachelor of Science - Data Science and Artificial Intelligence",
     school: "Nanyang Technological University",
     year: "Aug 2022 - Current",
+    gpa: "CGPA: 4.73/5.00",
     description:
-      "CGPA: 4.73/5.00. Exchange: Singapore Management University (Grade: 4.0/4.0), University of Waterloo.",
+      "Exchange: Singapore Management University (Grade: 4.0/4.0), University of Waterloo.",
   },
   {
     degree: "Diploma with Merit - Engineering Science",
     school: "Ngee Ann Polytechnic, Singapore",
     year: "Apr 2017 - Apr 2020",
+    gpa: "GPA: 3.99/4.00",
     description:
-      "CGPA: 3.99/4.00. Awards: Terasaki Electric Medal, Ngee Ann Scholarship. Diploma Plus in Advanced Engineering Mathematics.",
+      "Awards: Terasaki Electric Medal, Ngee Ann Scholarship. Diploma Plus in Advanced Engineering Mathematics.",
   },
 ];
 

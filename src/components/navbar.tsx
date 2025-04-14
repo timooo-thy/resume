@@ -19,6 +19,7 @@ import {
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { ModeToggle } from "./mode-toggle";
 import { DialogTitle } from "./ui/dialog";
+import Image from "next/image";
 
 const resumeSections = [
   { title: "Education", href: "/#education" },
@@ -36,10 +37,14 @@ export default function Navbar() {
       <div className="container mx-auto flex items-center h-20">
         <div className="mr-4 hidden md:flex w-full justify-between">
           <div className="flex">
-            <Link href="/" className="mr-6 flex items-center space-x-2">
-              <span className="hidden font-bold sm:inline-block">
-                Timothy&apos;s Portfolio
-              </span>
+            <Link href="/" className="mr-2">
+              <Image
+                src="/icon.png"
+                alt="Timothy's Portfolio"
+                width={50}
+                height={50}
+                className="rounded-full"
+              />
             </Link>
             <NavigationMenu>
               <NavigationMenuList>
@@ -128,9 +133,15 @@ export default function Navbar() {
                 <Menu className="h-5 w-5" />
                 <span className="sr-only">Toggle Menu</span>
               </Button>
-              <h1 className="font-semibold md:hidden">
-                <Link href="/">Timothy&apos;s Portfolio</Link>
-              </h1>
+              <Link href="/" className="mr-2">
+                <Image
+                  src="/icon.png"
+                  alt="Timothy's Portfolio"
+                  width={50}
+                  height={50}
+                  className="rounded-full"
+                />
+              </Link>
               <ModeToggle />
             </div>
           </SheetTrigger>
@@ -140,7 +151,13 @@ export default function Navbar() {
               className="flex items-center"
               onOpenChange={setIsOpen}
             >
-              <span className="font-bold">Timothy&apos;s Portfolio</span>
+              <Image
+                src="/icon.png"
+                alt="Timothy's Portfolio"
+                width={50}
+                height={50}
+                className="rounded-full"
+              />
             </MobileLink>
             <div className="my-4 h-[calc(100vh-8rem)] overflow-y-auto">
               <div className="flex flex-col space-y-3">

@@ -47,9 +47,7 @@ export default async function Blog({
 
   return (
     <main className="py-8 container mx-auto px-2 xl:px-0">
-      <h1 className="text-4xl font-semibold mb-10 text-center">
-        My Personal Blog
-      </h1>
+      <h1 className="text-4xl font-semibold mb-10 text-center">Blog</h1>
       <Suspense fallback={<AllPostSkeleton />}>
         <BlogPosts page={page ?? "1"} />
       </Suspense>
