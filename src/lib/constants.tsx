@@ -52,6 +52,12 @@ export const PROJECTS = [
 
 export const EXPERIENCES = [
   {
+    role: "Software Engineer Intern",
+    company: "Goldman Sachs, Singapore",
+    period: "May 2024 – Current",
+    responsibilities: ["Incoming summer analyst in the Core Engineering team."],
+  },
+  {
     role: "Machine Learning Researcher Intern",
     company:
       "Digital Trust Centre, Nanyang Technological University, Singapore",

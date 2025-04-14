@@ -18,7 +18,6 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { ModeToggle } from "./mode-toggle";
-import { CommandBlock } from "./command-block";
 import { DialogTitle } from "./ui/dialog";
 
 const resumeSections = [
