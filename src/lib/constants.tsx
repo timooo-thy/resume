@@ -74,10 +74,19 @@ export const PROJECTS = [
 
 export const EXPERIENCES = [
   {
+    role: "Machine Learning Engineer Intern",
+    company: "Tiktok, Singapore",
+    period: "Incoming Aug 2025",
+    responsibilities: ["Incoming MLE in Tiktok's Search Local Services Team"],
+  },
+  {
     role: "Software Engineer Intern",
-    company: "Goldman Sachs, Singapore",
-    period: "May 2024 – Current",
-    responsibilities: ["Incoming summer analyst in the Core Engineering team."],
+    company: "Goldman Sachs, Entitlements Platform Team, Singapore",
+    period: "May 2025 – Current",
+    responsibilities: [
+      "Developed a code editor playground for internal language.",
+      "Created a self healing code agent to assist developers in debugging and code generation.",
+    ],
   },
   {
     role: "Machine Learning Researcher Intern",
@@ -131,12 +140,12 @@ export const EXPERIENCES = [
 
 export const EDUCATIONS = [
   {
-    degree: "Bachelor of Science - Data Science and Artificial Intelligence",
+    degree: "Bachelor of Computing - Data Science & Artificial Intelligence",
     school: "Nanyang Technological University",
     year: "Aug 2022 - Current",
     gpa: "CGPA: 4.73/5.00",
     description:
-      "Exchange: Singapore Management University (Grade: 4.0/4.0), University of Waterloo.",
+      "Exchange: Singapore Management University (Grade: 4.0/4.0), University of Waterloo (Grade: 3.8/4.0).",
   },
   {
     degree: "Diploma with Merit - Engineering Science",
