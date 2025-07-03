@@ -15,8 +15,8 @@ const CodeBlock = ({ value }: Props) => {
       language={language}
       style={atomOneDark}
       customStyle={{
-        padding: "1.2em",
-        borderRadius: "1em",
+        padding: "1.5rem",
+        borderRadius: "1rem",
       }}
       wrapLongLines={true}
     >

@@ -31,15 +31,15 @@ const customComponents: PortableTextReactComponents = {
       <h1 className="text-3xl font-bold mt-12 mb-6">{children}</h1>
     ),
     h2: ({ children }) => (
-      <h2 className="text-2xl font-bold mt-6 mb-4">
+      <h2 className="text-2xl font-bold my-4">
         {children}
         <hr className="border-t border-gray-300 mt-1" />
       </h2>
     ),
     h3: ({ children }) => (
-      <h3 className="text-xl font-semibold mt-6 mb-4">{children}</h3>
+      <h3 className="text-xl font-semibold mt-4 mb-2">{children}</h3>
     ),
-    normal: ({ children }) => <p className="text-base mb-2">{children}</p>,
+    normal: ({ children }) => <p className="text-base mb-1">{children}</p>,
   },
 
   marks: {
