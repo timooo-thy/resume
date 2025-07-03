@@ -17,14 +17,6 @@ This project uses GitHub Actions for continuous integration and deployment:
 
 1. Add the necessary secrets to your GitHub repository:
 
-   - `VERCEL_TOKEN`
-   - `VERCEL_ORG_ID`
-   - `VERCEL_PROJECT_ID`
-   - `NEXT_PUBLIC_URL`
-   - `NEXT_PUBLIC_SANITY_PROJECT_ID`
-   - `NEXT_PUBLIC_SANITY_DATASET`
-   - `SANITY_API_TOKEN`
-
 2. Enable GitHub Actions in your repository settings if not already enabled.
 
 3. Push to the main branch to trigger the deployment workflow.
