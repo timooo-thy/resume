@@ -24,7 +24,6 @@ This project uses GitHub Actions for continuous integration and deployment:
    - `NEXT_PUBLIC_SANITY_PROJECT_ID`
    - `NEXT_PUBLIC_SANITY_DATASET`
    - `SANITY_API_TOKEN`
-   - `CODECOV_TOKEN` (optional, for coverage reports)
 
 2. Enable GitHub Actions in your repository settings if not already enabled.
 
