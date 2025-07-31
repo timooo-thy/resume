@@ -5,7 +5,7 @@ import {
   PROJECTS,
   SKILLS,
 } from "@/lib/constants";
-import { openai } from "@ai-sdk/openai";
+import { createOpenRouter } from "@openrouter/ai-sdk-provider";
 import { streamText } from "ai";
 
 export const maxDuration = 30;
@@ -21,8 +21,12 @@ export async function POST(req: Request) {
     JSON.stringify(SKILLS) +
     JSON.stringify(EDUCATIONS);
 
+  const openrouter = createOpenRouter({
+    apiKey: process.env.CHAT_API_KEY,
+  });
+
   const result = streamText({
-    model: openai("gpt-4o-mini"),
+    model: openrouter("meta-llama/llama-3.3-70b-instruct:free"),
     system: systemMessage,
     messages,
   });
