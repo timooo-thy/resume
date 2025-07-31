@@ -83,7 +83,7 @@ export function CommandBlock({ className, hideShortCut }: CommandBlockProps) {
                             m.role === "user"
                               ? "bg-primary text-white"
                               : "bg-gray-300/50 text-black"
-                          } p-2.5 rounded-lg max-w-xs md:text-lg`}
+                          } p-2.5 rounded-lg max-w-xs md:text-base`}
                         >
                           {m.content}
                         </p>

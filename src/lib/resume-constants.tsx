@@ -84,8 +84,9 @@ export const EXPERIENCES = [
     company: "Goldman Sachs, Entitlements Platform Team, Singapore",
     period: "May 2025 – Current",
     responsibilities: [
-      "Developed a code editor playground for internal language.",
-      "Created a self healing code agent to assist developers in debugging and code generation.",
+      "Engineered a Policy Builder Playground for authorisation policies, featuring custom syntax highlighting, collaborative sharing, and an integrated chatbot delivering 95% compilable, best-practice code.",
+      "Developed a graph-based Self Healing Code Agent leveraging Retrieval Augmented Generation, enabling automated code correction and optimisation for an internal language.",
+      "Designed and implemented the backend for the agent end-to-end, from architecture to deployment on Kubernetes, ensuring scalable and robust performance.",
     ],
   },
   {
@@ -158,20 +159,19 @@ export const EDUCATIONS = [
 ];
 
 export const SKILLS = [
-  "TypeScript",
+  "Typescript",
   "Python",
   "Golang",
-  "JavaScript",
   "SQL",
   "NoSQL",
-  "Express.js",
-  "Next.js",
   "React.js",
-  "Nuxt.js",
+  "Next.js",
   "Langchain",
+  "Langgraph",
   "Docker",
+  "Kubernetes",
   "R",
-  "Flask",
+  "AWS",
   "Microsoft Azure",
   "Google Cloud Platform",
 ];

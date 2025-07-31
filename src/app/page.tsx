@@ -14,7 +14,7 @@ import {
   EXPERIENCES,
   PROJECTS,
   SKILLS,
-} from "@/lib/constants";
+} from "@/lib/resume-constants";
 import { TypewriterEffect } from "@/components/type-writer";
 import { Cover } from "@/components/cover";
 import { AuroraBackground } from "@/components/aurora-background";

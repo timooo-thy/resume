@@ -4,7 +4,7 @@ import {
   EXPERIENCES,
   PROJECTS,
   SKILLS,
-} from "@/lib/constants";
+} from "@/lib/resume-constants";
 import { createOpenRouter } from "@openrouter/ai-sdk-provider";
 import { streamText } from "ai";
 
