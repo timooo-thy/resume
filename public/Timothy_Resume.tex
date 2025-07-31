@@ -1,0 +1,216 @@
+\documentclass[11pt,letterpaper]{article}
+
+% Only use basic packages that come with any LaTeX installation
+\usepackage[margin=0.5in]{geometry}
+\usepackage[hidelinks]{hyperref}
+
+% Basic formatting
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2pt}
+\pagestyle{empty}
+
+% Simple section formatting
+\newcommand{\resheading}[1]{%
+  \vspace{2pt}
+  {\normalsize \textbf{\MakeUppercase{#1}}}\\
+  \vspace{-8pt}
+  \hrule
+}
+
+% Resume item formatting 
+\newcommand{\resitem}[1]{\item \small #1 \vspace{-2pt}}
+
+% Subheading formatting
+\newcommand{\ressubheading}[4]{
+    \vspace{2pt}
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+        \small \textbf{#1} & \small #2 \\
+        \small \textit{#3} & \small \textit{#4} \\
+    \end{tabular*}\vspace{-3pt}}
+    
+\begin{document}
+
+\newcommand{\ressubheadingfirst}[4]{
+    \vspace{-6pt}
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+        \small \textbf{#1} & \small #2 \\
+        \small \textit{#3} & \small \textit{#4} \\
+    \end{tabular*}\vspace{-3pt}}
+
+% Custom itemize environment with no left margin
+\newenvironment{leftitemize}{%
+  \begin{list}{--}{%
+    \setlength{\leftmargin}{0pt}%
+    \setlength{\itemindent}{0pt}%
+    \setlength{\labelsep}{0.5em}%
+    \setlength{\labelwidth}{0.5em}%
+  }%
+}{%
+  \end{list}%
+}
+
+% Custom itemize for sub-items with minimal indentation
+\newenvironment{subitemize}{%
+  \begin{list}{--}{%
+    \setlength{\leftmargin}{18pt}%
+    \setlength{\itemindent}{0pt}%
+    \setlength{\labelsep}{0.5em}%
+    \setlength{\labelwidth}{0.5em}%
+  }%
+}{%
+  \end{list}%
+}
+
+% Custom project formatting
+\newcommand{\resprojectfirst}[2]{
+    \vspace{-2pt}
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+        \small \textbf{#1} & \small #2 \\
+    \end{tabular*}\vspace{-2pt}}
+
+\newcommand{\resproject}[2]{
+    \vspace{2pt}
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+        \small \textbf{#1} & \small #2 \\
+    \end{tabular*}\vspace{-2pt}}
+
+%----------HEADER----------
+\begin{center}
+{\Large \textbf{Timothy Lee}}\\
+\vspace{2pt}
+\small \href{mailto:timothyhy@hotmail.com}{timothyhy@hotmail.com} $|$ +65 98572155\\
+\small \href{https://timoothy.me}{https://timoothy.me} $|$ \href{https://linkedin.com/in/timoothy}{https://linkedin.com/in/timoothy} $|$ \href{https://github.com/timooo-thy}{https://github.com/timooo-thy}
+\end{center}
+\vspace{3pt}
+
+%----------EDUCATION----------
+\resheading{Education}
+\begin{leftitemize}
+\item[]
+\ressubheadingfirst{Bachelor of Science (B.S.) - Data Science and Artificial Intelligence}{Aug 2022 - Jun 2026 (Expected)}{Nanyang Technological University, Singapore}{}
+\begin{subitemize}
+    \resitem{\textbf{CGPA:} 4.73/5.00}
+    \resitem{\textbf{Scholarships:} Nanyang Technological College Scholarship, Bigo Excellence Scholarship}
+    \resitem{\textbf{Awards:} Dean's List AY 23/24}
+    \resitem{\textbf{Hackathons:} SimplifyNext RPA x Gen AI 2024 (1st Place), DSTA BrainHack 2024 (1st Runner Up), GIC Code To Impact 2024 (2nd Runner Up), HTX HacX (3rd Runner up)}
+    \resitem{\textbf{Exchange:} Singapore Management University, University of Waterloo}
+    \resitem{\textbf{Certifications:} Google Analytics Specialisation, Google UX Specialisation}
+\end{subitemize}
+
+\item[]
+\ressubheading{Diploma with Merit - Engineering Science}{Apr 2017 - Apr 2020}{Ngee Ann Polytechnic, Singapore}{}
+\begin{subitemize}
+    \resitem{\textbf{CGPA:} 3.99/4.00}
+    \resitem{\textbf{Awards \& Certifications:} Terasaki Electric Medal, Ngee Ann Scholarship}
+    \resitem{\textbf{Certifications:} Diploma Plus in Advanced Engineering Mathematics}
+\end{subitemize}
+\end{leftitemize}
+
+%----------EXPERIENCE----------
+\resheading{Experience}
+\begin{leftitemize}
+\item[]
+\ressubheadingfirst{Machine Learning Engineer Intern}{Aug 2025 -- Current}{Tiktok, Singapore}{}
+\begin{subitemize}
+    \resitem{Improving local search relevance under Tiktok Search Team.}
+\end{subitemize}
+
+\item[]
+\ressubheading{Software Engineer Intern}{May 2025 -- Aug 2025}{Goldman Sachs, Singapore}{}
+\begin{subitemize}
+    \resitem{Engineered a Policy Builder Playground for authorisation policies, featuring custom syntax highlighting, collaborative sharing, and an integrated chatbot delivering 95\% compilable, best-practice code.}
+    \resitem{Developed a graph-based Self Healing Code Agent leveraging Retrieval Augmented Generation, enabling automated code correction and optimisation for an internal language.}
+    \resitem{Designed and implemented the backend for the agent end-to-end, from architecture to deployment on Kubernetes, ensuring scalable and robust performance.}
+\end{subitemize}
+
+\item[]
+\ressubheading{Machine Learning Researcher Intern}{Jul 2024 -- Dec 2024}{Digital Trust Centre, Nanyang Technological University, Singapore}{}
+\begin{subitemize}
+    \resitem{Led development of secure AI systems researching and implementing ML defences against adversarial attacks via Machine Unlearning.}
+    \resitem{Research areas include Machine Unlearning, Backdoor Detection in AI.}
+\end{subitemize}
+
+\item[]
+\ressubheading{Software Engineer Intern}{Jul 2024 -- Dec 2024}{ShopBack, Singapore}{}
+\begin{subitemize}
+    \resitem{Spearheaded implementation of Generative AI solutions to optimise internal operations, reducing average handling time (AHT) from 365 seconds to 200 seconds, resulting in a 45\% improvement in agent efficiency and customer satisfaction.}
+    \resitem{Developed a prompt management version control platform integrating Salesforce and Zendesk, resulting in 80\% improved consistency, 60\% faster workflows, and 30\% higher first-contact resolution rates across all customer service channels.}
+\end{subitemize}
+
+\item[]
+\ressubheading{Machine Learning Engineer Intern}{Apr 2024 -- Jul 2024}{Home Team Science \& Technology Agency, Singapore}{}
+\begin{subitemize}
+    \resitem{Developed a multimodal large language model chatbot using open-source LLMs like LLaVA, Whisper, LLaMA3, enhancing government case management efficiency by over 40\%.}
+    \resitem{Implemented memory capabilities and response streaming and optimised query retrieval using Langchain and Chroma DB via Retrieval Augmented Generation and advanced metadata filtering.}
+    \resitem{Finetuned a LLaMA3 large language model using QLoRA with domain knowledge, improving accuracy by 30\% after evaluation.}
+\end{subitemize}
+
+\item[]
+\ressubheading{Full Stack Developer Intern}{Dec 2023 -- Mar 2024}{Siftee, Singapore}{}
+\begin{subitemize}
+    \resitem{Engineered SEO-optimised web applications using Nuxt.js, mastering state management and dynamic data rendering to enhance user experience and interface responsiveness.}
+    \resitem{Implemented secure cloud infrastructure using Google Cloud Platform, integrating Stripe for transactions. Optimised data operations and storage, boosting retrieval speed by 40\% and transaction success rates by 25\%.}
+    \resitem{Leveraged OpenAI with Python to automate ETL tasks, boosting backend efficiency by 50\% and ensuring scalable data transformation and integration workflows.}
+\end{subitemize}
+
+\item[]
+\ressubheading{Cloud Engineer Intern}{May 2023 -- Aug 2023}{Singapore Land Authority, Singapore}{}
+\begin{subitemize}
+    \resitem{Spearheaded the Proof of Concept (POC) on Microsoft Azure and led data virtualisation initiatives utilising geospatial insights via Denodo, elevating data accessibility and fostering enriched insights.}
+    \resitem{Designed user-centric dashboards to transform intricate data into actionable insights tailored to users' needs using MicroStrategy.}
+\end{subitemize}
+\end{leftitemize}
+
+%----------SKILLS----------
+\resheading{Skills}
+\begin{leftitemize}
+\item[]
+\small \textbf{Digital Skills:} Typescript, Python, SQL, NoSQL, React.js, Next.js, Langchain, Langgraph, Docker, Kubernetes, R, AWS, Microsoft Azure, Google Cloud Platform\\[4pt]
+\small \textbf{Soft Skills:} Adaptability, Collaborative Teamwork, Data Visualisation, Business Acumen, Creative Insight
+\end{leftitemize}
+
+%----------ACADEMIC PROJECTS----------
+\resheading{Academic Projects}
+\begin{leftitemize}
+\item[]
+\resprojectfirst{Recommendation System Anomaly Detection}{2024}
+\begin{subitemize}
+    \resitem{Competed in a machine learning competition, achieving a 94\% anomaly detection AUC-ROC score by employing deep neural networks, logistic regression, and one-class SVM.}
+    \resitem{Enhanced model performance through extensive feature engineering, utilising techniques such as SMOTE and ELU, successfully identifying and mitigating anomalies in a recommendation system.}
+\end{subitemize}
+
+\item[]
+\resproject{SG Read Already?}{2023}
+\begin{subitemize}
+    \resitem{Developed and deployed "SG read already?", a web application enhancing accessibility with document summarisation and scan-to-speech for the visually impaired, using Next.js.}
+    \resitem{Led the creation of an accessible platform for enhanced document understanding, catering to elderlies and individuals with visual challenges, demonstrating commitment to digital inclusivity.}
+\end{subitemize}
+
+\item[]
+\resproject{AI Product Chatbot}{2023}
+\begin{subitemize}
+    \resitem{Designed a conversational AI Streamlit Python app using Langchain and Hugging Face models.}
+    \resitem{Enhanced user experience by incorporating features like Conversational Memory, dynamic interaction, and session management, improving context awareness and user experience.}
+    \resitem{Utilised Retrieval Augmented Generation for precise and relevant real-time FAQ responses.}
+\end{subitemize}
+
+\item[]
+\resproject{Singapore University Guide}{2023}
+\begin{subitemize}
+    \resitem{Designed, developed, and deployed a comprehensive university guide using the MERN stack.}
+    \resitem{Integrated modern UX techniques, responsive design, ensuring an engaging user experience.}
+    \resitem{Seamlessly incorporated OAuth, email notifications, and OpenAI's GPT API.}
+\end{subitemize}
+\end{leftitemize}
+
+%----------CO-CURRICULAR ACTIVITIES----------
+\resheading{CO-CURRICULAR ACTIVITIES}
+\begin{leftitemize}
+\item[]
+\ressubheadingfirst{Nanyang Technological University Hall 6}{2023 - 2024}{Orientation and Hall Pageant Publicity Head}{}
+
+\item[]
+\ressubheading{Ngee Ann Lifeguard Corps}{2018 - 2019}{Captain}{}
+\end{leftitemize}
+
+\end{document}
