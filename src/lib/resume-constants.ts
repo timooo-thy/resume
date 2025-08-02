@@ -81,8 +81,8 @@ export const EXPERIENCES = [
   },
   {
     role: "Software Engineer Intern",
-    company: "Goldman Sachs, Entitlements Platform Team, Singapore",
-    period: "May 2025 – Current",
+    company: "Goldman Sachs, Singapore",
+    period: "May 2025 – Aug 2025",
     responsibilities: [
       "Engineered a Policy Builder Playground for authorisation policies, featuring custom syntax highlighting, collaborative sharing, and an integrated chatbot delivering 95% compilable, best-practice code.",
       "Developed a graph-based Self Healing Code Agent leveraging Retrieval Augmented Generation, enabling automated code correction and optimisation for an internal language.",
