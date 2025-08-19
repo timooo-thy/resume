@@ -160,6 +160,9 @@ export default function Navbar() {
                 <MobileLink href="/blog" onOpenChange={setIsOpen}>
                   Blog
                 </MobileLink>
+                <MobileLink href="/Timothy_Resume.pdf" onOpenChange={setIsOpen}>
+                  Resume
+                </MobileLink>
                 {resumeSections.map((section) => (
                   <MobileLink
                     key={section.href}
