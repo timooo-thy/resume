@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1753974821.043 "/Users/timothylee/Desktop/Web Development/resume/public/Timothy_Resume.tex" "Timothy_Resume.pdf" "Timothy_Resume" 1753974821.28907 0
-  "/Users/timothylee/Desktop/Web Development/resume/public/Timothy_Resume.tex" 1753974820.81103 10255 c47a511eebbfc89c85c13c236b0e24b7 ""
+["pdflatex"] 1755607765.6394 "/Users/timothylee/Desktop/Web Development/resume/public/Timothy_Resume.tex" "Timothy_Resume.pdf" "Timothy_Resume" 1755607765.8507 0
+  "/Users/timothylee/Desktop/Web Development/resume/public/Timothy_Resume.tex" 1755607765.43946 10280 c287890c63a2cb69aa47c472e5eb16cc ""
   "/Users/timothylee/Library/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "/Users/timothylee/Library/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1136768653 1324 c910af8c371558dc20f2d7822f66fe64 ""
   "/Users/timothylee/Library/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm" 1136768653 1528 abec98dbc43e172678c11b3b9031252a ""
@@ -57,9 +57,9 @@
   "/Users/timothylee/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1738627632 92943 e9771058a170f885366fc7093566d318 ""
   "/Users/timothylee/Library/TinyTeX/texmf-var/web2c/pdftex/pdflatex.fmt" 1736568946 1928069 dc0f3cf1a814752f31db4a175bae750c ""
   "/Users/timothylee/Library/TinyTeX/texmf.cnf" 1736295739.92617 708 85fd07691b6294ba94c59dbc62380410 ""
-  "Timothy_Resume.aux" 1753974821.25932 162 87159b23cce7c2b923b11c85495bbd6d "pdflatex"
-  "Timothy_Resume.out" 1753974821.23399 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "Timothy_Resume.tex" 1753974820.81103 10255 c47a511eebbfc89c85c13c236b0e24b7 ""
+  "Timothy_Resume.aux" 1755607765.82527 162 87159b23cce7c2b923b11c85495bbd6d "pdflatex"
+  "Timothy_Resume.out" 1755607765.80287 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "Timothy_Resume.tex" 1755607765.43946 10280 c287890c63a2cb69aa47c472e5eb16cc ""
   (generated)
   "Timothy_Resume.aux"
   "Timothy_Resume.log"
