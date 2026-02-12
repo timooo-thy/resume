@@ -17,6 +17,28 @@ const instrumentSerif = Instrument_Serif({
 export const metadata: Metadata = {
   title: "Timothy's Portfolio",
   description: "Bits and bytes of my life",
+  openGraph: {
+    title: "Timothy's Portfolio",
+    description: "Bits and bytes of my life",
+    url: "/",
+    siteName: "Timothy's Portfolio",
+    images: [
+      {
+        url: "/og/home.png",
+        width: 1200,
+        height: 630,
+        alt: "Timothy's Portfolio — Bits and bytes of my life",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Timothy's Portfolio",
+    description: "Bits and bytes of my life",
+    images: ["/og/home.png"],
+  },
 };
 
 export default function RootLayout({

@@ -1,12 +1,5 @@
 "use client";
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
   AWARDS,
@@ -56,7 +49,7 @@ export default function Home() {
     <main className="min-h-screen bg-background text-foreground overflow-x-hidden bg-noise">
       {/* ═══════════ HERO ═══════════ */}
       <section className="relative min-h-[90vh] flex flex-col justify-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pt-20">
-         <div className="absolute inset-0 bg-grid-pattern -z-10" />
+        <div className="absolute inset-0 bg-grid-pattern -z-10" />
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -288,19 +281,24 @@ export default function Home() {
                 className="border border-border/40 p-8 rounded-2xl bg-card/20 hover:bg-card/40 transition-colors flex flex-col justify-between h-full"
               >
                 <div>
-                    <div className="flex flex-col sm:flex-row justify-between items-start gap-4 mb-4">
-                      <h3 className="text-2xl font-display leading-tight">{edu.school}</h3>
-                      <Badge variant="outline" className="font-mono whitespace-nowrap shrink-0">
-                        {edu.year}
-                      </Badge>
-                    </div>
-                    <p className="text-muted-foreground font-medium mb-4">
-                      {edu.degree}
-                    </p>
+                  <div className="flex flex-col sm:flex-row justify-between items-start gap-4 mb-4">
+                    <h3 className="text-2xl font-display leading-tight">
+                      {edu.school}
+                    </h3>
+                    <Badge
+                      variant="outline"
+                      className="font-mono whitespace-nowrap shrink-0"
+                    >
+                      {edu.year}
+                    </Badge>
+                  </div>
+                  <p className="text-muted-foreground font-medium mb-4">
+                    {edu.degree}
+                  </p>
                 </div>
-                
+
                 <div>
-                   <p className="text-muted-foreground/80 text-sm leading-relaxed mb-4">
+                  <p className="text-muted-foreground/80 text-sm leading-relaxed mb-4">
                     {edu.description}
                   </p>
                   <div className="font-medium text-sm text-primary">

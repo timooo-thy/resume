@@ -67,7 +67,9 @@ const customComponents: Partial<PortableTextReactComponents> = {
     strong: ({ children }) => (
       <strong className="font-semibold text-foreground">{children}</strong>
     ),
-    em: ({ children }) => <em className="italic text-foreground/90">{children}</em>,
+    em: ({ children }) => (
+      <em className="italic text-foreground/90">{children}</em>
+    ),
     code: ({ children }) => (
       <code className="bg-muted/50 text-foreground px-1.5 py-0.5 rounded-md font-mono text-[0.9em] border border-border/50 align-middle">
         {children}
@@ -249,14 +251,16 @@ export default async function PostPage({
 
   return (
     <main className="container mx-auto pb-20 px-4 md:px-8 max-w-4xl bg-background">
-      <Link
-        href="/blog"
-        className="inline-flex items-center text-muted-foreground hover:text-foreground my-8 md:my-12 text-sm uppercase tracking-widest font-medium transition-colors"
-      >
-        <ArrowLeftIcon className="mr-2 h-4 w-4" />
-        Back to Journal
-      </Link>
-      
+      <div className="mt-14">
+        <Link
+          href="/blog"
+          className="inline-flex items-center text-muted-foreground hover:text-foreground my-8 md:my-12 text-sm uppercase tracking-widest font-medium transition-colors"
+        >
+          <ArrowLeftIcon className="mr-2 h-4 w-4" />
+          Back to Journal
+        </Link>
+      </div>
+
       {post && (
         <article>
           <FadeIn>

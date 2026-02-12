@@ -13,7 +13,7 @@ export const PROJECTS = [
       "Vercel AI SDK",
     ],
     url: "https://github.com/timooo-thy/ai-search",
-    image: "/codeorient.png",
+    image: "/projects/codeorient.png",
   },
   {
     name: "HTX Sentinel 2024",

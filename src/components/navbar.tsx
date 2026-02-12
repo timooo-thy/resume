@@ -7,14 +7,19 @@ import { Menu } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetTitle,
+} from "@/components/ui/sheet";
 import { ModeToggle } from "./mode-toggle";
 
 const navItems = [
+  { title: "Blog", href: "/blog" },
   { title: "Experience", href: "/#experiences" },
   { title: "Projects", href: "/#projects" },
-  { title: "Blog", href: "/blog" },
-  { title: "Resume", href: "/Timothy_Resume.pdf", external: true },
+  { title: "Resume", href: "/resume/Timothy_Resume.pdf", external: true },
 ];
 
 export default function Navbar() {
@@ -61,8 +66,8 @@ export default function Navbar() {
         {/* Mobile Menu Toggle */}
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <div className="flex items-center gap-2 md:hidden">
-             <ModeToggle />
-             <SheetTrigger asChild>
+            <ModeToggle />
+            <SheetTrigger asChild>
               <Button
                 variant="ghost"
                 size="icon"
@@ -73,10 +78,13 @@ export default function Navbar() {
               </Button>
             </SheetTrigger>
           </div>
-         
-          <SheetContent side="top" className="w-full h-full flex flex-col pt-24 px-6 bg-background/95 backdrop-blur-xl border-none">
+
+          <SheetContent
+            side="top"
+            className="w-full h-full flex flex-col pt-24 px-6 bg-background/95 backdrop-blur-xl border-none"
+          >
             <SheetTitle className="sr-only">Menu</SheetTitle>
-             {/* Close button is built-in to SheetContent but we can customize or let it be */}
+            {/* Close button is built-in to SheetContent but we can customize or let it be */}
             <div className="flex flex-col gap-8 items-center text-center">
               {navItems.map((item) => (
                 <Link
@@ -90,7 +98,11 @@ export default function Navbar() {
                 </Link>
               ))}
               <div className="mt-8">
-                <Button asChild className="rounded-full px-8 py-6 text-lg" size="lg">
+                <Button
+                  asChild
+                  className="rounded-full px-8 py-6 text-lg"
+                  size="lg"
+                >
                   <Link href="/#contact" onClick={() => setIsOpen(false)}>
                     Get in Touch
                   </Link>
