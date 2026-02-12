@@ -1,8 +1,8 @@
-PWD /Users/timooothy/Desktop/Web Development/resume/public
+PWD /Users/timooothy/Desktop/Web Development/resume/public/resume
 INPUT /usr/local/texlive/2025/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/timooothy/Desktop/Web Development/resume/public/Timothy_Resume.tex
+INPUT /Users/timooothy/Desktop/Web Development/resume/public/resume/Timothy_Resume.tex
 OUTPUT Timothy_Resume.log
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/article.cls
