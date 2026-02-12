@@ -97,7 +97,7 @@ export default function Navbar() {
                     className={navigationMenuTriggerStyle()}
                     asChild
                   >
-                    <Link href="https://short.timooothy.me" target="_blank">
+                    <Link href="https://short.timooothy.dev" target="_blank">
                       URL Shortener
                     </Link>
                   </NavigationMenuLink>
@@ -173,7 +173,7 @@ export default function Navbar() {
                   </MobileLink>
                 ))}
                 <MobileLink
-                  href="https://short.timooothy.me"
+                  href="https://short.timooothy.dev"
                   onOpenChange={setIsOpen}
                   target="_blank"
                 >
