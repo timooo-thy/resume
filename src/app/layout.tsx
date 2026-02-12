@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -8,6 +8,11 @@ import ScrollToTop from "@/components/scroll-to-top";
 import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"] });
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-display",
+});
 
 export const metadata: Metadata = {
   title: "Timothy's Portfolio",
@@ -21,7 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} antialiased`}>
+      <body
+        className={`${inter.className} ${instrumentSerif.variable} antialiased`}
+      >
         <div className="mx-auto min-h-dvh bg-background">
           <ThemeProvider
             attribute="class"

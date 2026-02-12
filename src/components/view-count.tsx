@@ -1,6 +1,6 @@
 import { headers } from "next/headers";
-import Ping from "./ping";
 import { Redis } from "@upstash/redis";
+import { EyeIcon } from "lucide-react";
 
 const redis = Redis.fromEnv();
 
@@ -22,11 +22,9 @@ export default async function ViewCount({ slug, readTime }: ViewCountProps) {
   }
 
   return (
-    <div className="bg-primary/80 px-2.5 py-0.5 rounded-lg">
-      <Ping />
-      <p className="text-white text-sm md:text-base">
-        <span className="font-bold">Views: {count}</span>
-      </p>
-    </div>
+    <span className="flex items-center">
+      <EyeIcon className="mr-2 h-4 w-4" />
+      {count} VIEWS
+    </span>
   );
 }

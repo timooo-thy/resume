@@ -12,7 +12,8 @@ export const PROJECTS = [
       "LangChain",
       "Vercel AI SDK",
     ],
-    url: "https://github.com/timooo-thy/codeorient",
+    url: "https://github.com/timooo-thy/ai-search",
+    image: "/codeorient.png",
   },
   {
     name: "HTX Sentinel 2024",
@@ -182,23 +183,17 @@ export const EDUCATIONS = [
   },
 ];
 
-export const SKILLS = [
-  "Typescript",
-  "Python",
-  "Golang",
-  "SQL",
-  "NoSQL",
-  "React.js",
-  "Next.js",
-  "Langchain",
-  "Langgraph",
-  "Docker",
-  "Kubernetes",
-  "R",
-  "AWS",
-  "Microsoft Azure",
-  "Google Cloud Platform",
-];
+export const SKILLS: Record<string, string[]> = {
+  Languages: ["TypeScript", "Python", "Golang", "SQL", "NoSQL", "R"],
+  "Frameworks & Libraries": ["React.js", "Next.js", "Langchain", "Langgraph"],
+  "Cloud & DevOps": [
+    "AWS",
+    "Microsoft Azure",
+    "Google Cloud Platform",
+    "Docker",
+    "Kubernetes",
+  ],
+};
 
 export const AWARDS = [
   "Nanyang Technological College Scholarship",
@@ -212,4 +207,22 @@ export const AWARDS = [
   "Google Analytics Specialisation",
   "Google UX Specialisation",
   "MySQL for Data Analytics and Business Intelligence",
+];
+
+export const CONTACT_LINKS = [
+  {
+    label: "GitHub",
+    href: "https://github.com/timooo-thy",
+    icon: "github" as const,
+  },
+  {
+    label: "LinkedIn",
+    href: "https://sg.linkedin.com/in/timooothy",
+    icon: "linkedin" as const,
+  },
+  {
+    label: "Email",
+    href: "mailto:timothylhy@hotmail.com",
+    icon: "mail" as const,
+  },
 ];
