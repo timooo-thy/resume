@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1770886877.85416 "/Users/timooothy/Desktop/Web Development/resume/public/Timothy_Resume.tex" "Timothy_Resume.pdf" "Timothy_Resume" 1770886878.21576 0
-  "/Users/timooothy/Desktop/Web Development/resume/public/Timothy_Resume.tex" 1770886877.63755 10264 99ff183e0d941ac89ee172f1ab906cb8 ""
+["pdflatex"] 1770887087.75294 "/Users/timooothy/Desktop/Web Development/resume/public/Timothy_Resume.tex" "Timothy_Resume.pdf" "Timothy_Resume" 1770887088.09101 0
+  "/Users/timooothy/Desktop/Web Development/resume/public/Timothy_Resume.tex" 1770887087.66607 10316 89dd97f9872e8389bb166ebe0682f4ff ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1136768653 1324 c910af8c371558dc20f2d7822f66fe64 ""
@@ -58,9 +58,9 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1769147788 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1769147780 3345738 3dc32cb70fcdf7b366ce13aa31330c16 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "Timothy_Resume.aux" 1770886878.17429 162 87159b23cce7c2b923b11c85495bbd6d "pdflatex"
-  "Timothy_Resume.out" 1770886878.06325 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "Timothy_Resume.tex" 1770886877.63755 10264 99ff183e0d941ac89ee172f1ab906cb8 ""
+  "Timothy_Resume.aux" 1770887088.06832 162 87159b23cce7c2b923b11c85495bbd6d "pdflatex"
+  "Timothy_Resume.out" 1770887087.94576 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "Timothy_Resume.tex" 1770887087.66607 10316 89dd97f9872e8389bb166ebe0682f4ff ""
   (generated)
   "Timothy_Resume.aux"
   "Timothy_Resume.log"

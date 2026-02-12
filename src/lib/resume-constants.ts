@@ -1,5 +1,20 @@
 export const PROJECTS = [
   {
+    name: "CodeOrient 2026",
+    description:
+      "AI-powered code navigation tool helping developers understand codebases through natural language queries. Features semantic code search, interactive graph visualisation of file dependencies, RAG-based repository indexing, and contextual AI chat. Built with Next.js, OpenAI, React Flow, and Upstash for vector search and caching.",
+    technologies: [
+      "Next.js",
+      "React Flow",
+      "PostgreSQL",
+      "Prisma",
+      "Upstash",
+      "LangChain",
+      "Vercel AI SDK",
+    ],
+    url: "https://github.com/timooo-thy/codeorient",
+  },
+  {
     name: "HTX Sentinel 2024",
     description:
       "Developed a comprehensive security platform featuring real-time object detection using YOLOv11, Llama 3.2, Florence, and SAM2 models. Implemented an automated training pipeline for CV models and built an interactive admin dashboard with live patrol mapping and incident tracking. Leveraged DeepSort for object reidentification to support efficient policing operations.",
@@ -10,10 +25,9 @@ export const PROJECTS = [
     name: "URL Shortener 2024",
     description:
       "Developed a URL shortener using Golang and PostgreSQL, implementing a RESTful API for efficient URL management. Enhanced user experience with link expiry and fast redirects with Redis cache. Deployed on Vercel for scalability and reliability.",
-    technologies: ["Golang", "Nextjs", "Redis", "PostgreSQL", "Prisma"],
+    technologies: ["Golang", "Next.js", "Redis", "PostgreSQL", "Prisma"],
     url: "https://github.com/timooo-thy/url-shortener-go",
   },
-
   {
     name: "Recommendation System Anomaly Detection 2024",
     description:
@@ -76,8 +90,18 @@ export const EXPERIENCES = [
   {
     role: "Machine Learning Engineer Intern",
     company: "Tiktok, Singapore",
-    period: "Incoming Aug 2025",
-    responsibilities: ["Incoming MLE in Tiktok's Search Local Services Team"],
+    period: "Mar 2026",
+    responsibilities: ["Incoming MLE at TikTok BRIC."],
+  },
+  {
+    role: "Machine Learning Engineer Intern",
+    company: "Tiktok, Singapore",
+    period: "Aug 2025 - Dec 2025",
+    responsibilities: [
+      "Engineered high-precision SLMs via Knowledge Distillation to capture user intent; applied a novel 'Random RAG' fine-tuning strategy for GeoIntent (0.90 P/R) and semantic query analysis for Timeliness (0.96 P/R).",
+      "Designed and deployed a near-line cache architecture across 16 countries (US, EU, ROW) to serve these query intent signals in real-time.",
+      "Empowered downstream Ranking and Retrieval to optimise local discovery: prioritising location-based services relative to user GPS and ensuring content validity for time-sensitive queries (e.g., promos, operating status).",
+    ],
   },
   {
     role: "Software Engineer Intern",
@@ -144,7 +168,7 @@ export const EDUCATIONS = [
     degree: "Bachelor of Computing - Data Science & Artificial Intelligence",
     school: "Nanyang Technological University",
     year: "Aug 2022 - Current",
-    gpa: "CGPA: 4.73/5.00",
+    gpa: "CGPA: 4.75/5.00",
     description:
       "Exchange: Singapore Management University (Grade: 4.0/4.0), University of Waterloo (Grade: 3.8/4.0).",
   },
