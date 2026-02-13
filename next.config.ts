@@ -2,10 +2,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
-  experimental: {
-    ppr: "incremental",
-  },
+  cacheComponents: true,
   images: {
+    qualities: [75, 100],
     remotePatterns: [
       {
         protocol: "https",

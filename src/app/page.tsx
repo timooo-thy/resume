@@ -41,8 +41,7 @@ function SectionHeading({
 }
 
 import Image from "next/image";
-
-// ... imports remain same until component starts
+import { CurrentYear } from "@/components/current-year";
 
 export default function Home() {
   return (
@@ -344,7 +343,7 @@ export default function Home() {
                   className="flex items-start gap-6 py-4 border-b border-border/40 last:border-0 group"
                 >
                   <span className="font-display text-muted-foreground/30 text-2xl group-hover:text-primary/50 transition-colors">
-                    0{i + 1}
+                    {i > 8 ? i+1 : `0${i + 1}`}
                   </span>
                   <span className="text-lg pt-1 group-hover:text-foreground/80 transition-colors">
                     {award}
@@ -392,7 +391,8 @@ export default function Home() {
           </motion.div>
 
           <footer className="mt-40 text-sm text-muted-foreground/40 font-mono">
-            <p>&copy; {new Date().getFullYear()} Timothy Lee.</p>
+          
+            <p>&copy; <CurrentYear /> Timothy Lee.</p>
           </footer>
         </section>
       </div>

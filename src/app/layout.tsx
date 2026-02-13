@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { ClientLayout } from "@/components/client-layout";
 import ScrollToTop from "@/components/scroll-to-top";
 import { Analytics } from "@vercel/analytics/react";
+import { Suspense } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 const instrumentSerif = Instrument_Serif({
@@ -41,7 +42,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -58,12 +59,15 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <ClientLayout>
-              {children}
-              <Analytics />
-              <ScrollToTop />
-              <Toaster richColors />
-            </ClientLayout>
+            <Suspense fallback={null}>
+              <ClientLayout>
+                {children}
+                <Analytics />
+                <ScrollToTop />
+                <Toaster richColors />
+              </ClientLayout>
+            </Suspense>
+
             <Toaster richColors />
           </ThemeProvider>
         </div>

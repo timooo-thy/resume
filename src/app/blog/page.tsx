@@ -3,20 +3,25 @@ import { BlogList } from "@/components/components-blog-list";
 import { POSTS_CARD_QUERYResult } from "@/lib/sanity.types";
 import { POSTS_CARD_QUERY } from "@/lib/sanity.queries";
 import { urlFor } from "@/sanity/lib/image";
-import { Suspense } from "react";
+import { Suspense, cache } from "react";
 import AllPostSkeleton from "@/components/all-post-skeleton";
 
 const POSTS_PER_PAGE = 4;
+
+const getBlogPosts = cache(async (start: number, end: number) => {
+  return await client.fetch<POSTS_CARD_QUERYResult>(
+    POSTS_CARD_QUERY,
+    { start, end },
+    { next: { revalidate: 60 } }
+  );
+});
 
 async function BlogPosts({ page }: { page: string }) {
   const currentPage = Number(page);
   const start = (currentPage - 1) * POSTS_PER_PAGE;
   const end = start + POSTS_PER_PAGE;
 
-  const { posts, total } = await client.fetch<POSTS_CARD_QUERYResult>(
-    POSTS_CARD_QUERY,
-    { start, end }
-  );
+  const { posts, total } = await getBlogPosts(start, end);
 
   const postsWithUrls = posts.map((post) => ({
     ...post,
@@ -38,21 +43,34 @@ async function BlogPosts({ page }: { page: string }) {
   );
 }
 
-export default async function Blog({
+async function BlogContent({
   searchParams,
 }: {
   searchParams: Promise<{ page?: string }>;
 }) {
   const { page } = await searchParams;
+  return <BlogPosts page={page ?? "1"} />;
+}
 
+export default function Blog({
+  searchParams,
+}: {
+  searchParams: Promise<{ page?: string }>;
+}) {
   return (
     <main className="py-20 md:py-32 container mx-auto px-4 md:px-8 max-w-7xl">
       <div className="max-w-3xl mx-auto mb-20 text-center">
-        <h1 className="text-6xl md:text-8xl font-display mb-6 tracking-tight">Journal</h1>
-        <p className="text-xl text-muted-foreground">Thoughts on software engineering, machine learning, and technology.</p>
+        <h1 className="text-6xl md:text-8xl font-display mb-6 tracking-tight">
+          {" "}
+          Journal
+        </h1>
+        <p className="text-xl text-muted-foreground">
+          Thoughts on software engineering, machine learning, and technology.
+        </p>
       </div>
+
       <Suspense fallback={<AllPostSkeleton />}>
-        <BlogPosts page={page ?? "1"} />
+        <BlogContent searchParams={searchParams} />
       </Suspense>
     </main>
   );
