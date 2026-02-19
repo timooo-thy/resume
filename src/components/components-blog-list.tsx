@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { POSTS_CARD_QUERYResult } from "@/lib/sanity.types";
+import { POSTS_CARD_QUERY_RESULT } from "@/lib/sanity.types";
 import Pagination from "./pagination";
 import { Button } from "./ui/button";
 
 type BlogListProps = {
-  posts: (POSTS_CARD_QUERYResult["posts"][number] & { url?: string })[];
+  posts: (POSTS_CARD_QUERY_RESULT["posts"][number] & { url?: string })[];
   currentPage: number;
   totalPosts: number;
   postsPerPage: number;
@@ -21,8 +21,8 @@ export function BlogList({
     <div className="max-w-7xl mx-auto">
       <div className="grid grid-cols-1 gap-12 md:gap-20 mb-20">
         {posts.map((post) => (
-          <article 
-            key={post._id} 
+          <article
+            key={post._id}
             className="group grid grid-cols-1 md:grid-cols-2 gap-8 items-start"
           >
             <div className="relative aspect-[16/10] bg-muted overflow-hidden rounded-md border border-border/40">
@@ -52,25 +52,32 @@ export function BlogList({
                 ))}
               </div>
 
-              <Link href={`/blog/post/${post.slug?.current}`} className="group-hover:text-primary transition-colors">
-                 <h2 className="text-3xl md:text-4xl font-display leading-tight mb-4">
+              <Link
+                href={`/blog/post/${post.slug?.current}`}
+                className="group-hover:text-primary transition-colors"
+              >
+                <h2 className="text-3xl md:text-4xl font-display leading-tight mb-4">
                   {post.title}
                 </h2>
               </Link>
-              
+
               <div className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
-                 <span>{post.publishedAt}</span>
-                 <span>•</span>
-                 <span>By {post.author?.name}</span>
+                <span>{post.publishedAt}</span>
+                <span>•</span>
+                <span>By {post.author?.name}</span>
               </div>
 
               <p className="text-muted-foreground leading-relaxed mb-6 line-clamp-3">
-                 {/* Fallback description if we don't have excerpts */}
-                 Read the full article to learn more about this topic.
+                {/* Fallback description if we don't have excerpts */}
+                Read the full article to learn more about this topic.
               </p>
 
               <div className="mt-auto">
-                <Button asChild variant="link" className="p-0 h-auto font-medium text-foreground underline-offset-4 hover:text-primary">
+                <Button
+                  asChild
+                  variant="link"
+                  className="p-0 h-auto font-medium text-foreground underline-offset-4 hover:text-primary"
+                >
                   <Link href={`/blog/post/${post.slug?.current}`}>
                     Read Article
                   </Link>
@@ -80,7 +87,7 @@ export function BlogList({
           </article>
         ))}
       </div>
-      
+
       <Pagination
         currentPage={currentPage}
         postsPerPage={postsPerPage}

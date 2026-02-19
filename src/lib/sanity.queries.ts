@@ -26,3 +26,9 @@ export const POSTS_LIST_SLUG_QUERY = defineQuery(`
   *[_type == "post"] | order(publishedAt desc) {
   slug,
 }`);
+
+export const POSTS_SITEMAP_QUERY = defineQuery(`
+  *[_type == "post"] | order(publishedAt desc) {
+  slug,
+  publishedAt,
+}`);

@@ -6,8 +6,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { CalendarIcon, ClockIcon, ArrowLeftIcon } from "lucide-react";
 import {
-  INDIVIDUAL_POST_QUERYResult,
-  POSTS_LIST_SLUG_QUERYResult,
+  INDIVIDUAL_POST_QUERY_RESULT,
+  POSTS_LIST_SLUG_QUERY_RESULT,
 } from "../../../../lib/sanity.types";
 import {
   INDIVIDUAL_POST_QUERY,
@@ -25,6 +25,13 @@ import ScrollToTop from "@/components/scroll-to-top";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import { FadeIn, ScaleIn } from "@/components/blog-post-animation";
+import {
+  generateBlogPostingSchema,
+  generateBreadcrumbSchema,
+  JsonLdScript,
+} from "@/components/json-ld";
+
+const SITE_URL = process.env.NEXT_PUBLIC_URL || "https://timooothy.dev";
 
 const customComponents: Partial<PortableTextReactComponents> = {
   block: {
@@ -60,7 +67,7 @@ const customComponents: Partial<PortableTextReactComponents> = {
 
 // --- DATA FETCHING ---
 const getPost = cache(async (params: { slug: string }) => {
-  return await client.fetch<INDIVIDUAL_POST_QUERYResult>(
+  return await client.fetch<INDIVIDUAL_POST_QUERY_RESULT>(
     INDIVIDUAL_POST_QUERY,
     params,
     {
@@ -77,20 +84,51 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const post = await getPost(parameters);
   const postImageUrl = post?.mainImage ? urlFor(post.mainImage)?.width(1200).height(630).quality(100).url() : null;
 
+  if (!post) {
+    return {
+      title: "Post Not Found",
+    };
+  }
+
+  const description = `Read "${post.title}" by Timothy Lee - insights on software engineering, machine learning, and technology.`;
+
   return {
-    title: post?.title || "Timothy's Blog",
-    description: "A blog about web development, software engineering, and other tech-related topics.",
+    title: post.title,
+    description,
+    authors: [{ name: post.author.name }],
+    alternates: {
+      canonical: `${SITE_URL}/blog/post/${parameters.slug}`,
+    },
     openGraph: {
-      title: post?.title,
-      description: "A blog about web development, software engineering, and other tech-related topics.",
-      url: `${process.env.NEXT_PUBLIC_URL}/blog/post/${parameters.slug}`,
+      title: post.title,
+      description,
+      url: `${SITE_URL}/blog/post/${parameters.slug}`,
+      type: "article",
+      publishedTime: post.publishedAt,
+      authors: [post.author.name],
+      images: postImageUrl
+        ? [
+            {
+              url: postImageUrl,
+              width: 1200,
+              height: 630,
+              alt: post.title,
+            },
+          ]
+        : [],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description,
       images: postImageUrl ? [postImageUrl] : [],
+      creator: "@timooothy",
     },
   };
 }
 
 export async function generateStaticParams() {
-  const posts = await client.fetch<POSTS_LIST_SLUG_QUERYResult>(POSTS_LIST_SLUG_QUERY);
+  const posts = await client.fetch<POSTS_LIST_SLUG_QUERY_RESULT>(POSTS_LIST_SLUG_QUERY);
   return posts.map((post) => ({ slug: String(post.slug.current) }));
 }
 
@@ -101,10 +139,34 @@ async function PostContent({ slug }: { slug: string }) {
   if (!post) return notFound();
 
   const postImageUrl = post?.mainImage ? urlFor(post.mainImage)?.width(2400).height(1200).quality(100).url() : null;
+  const ogImageUrl = post?.mainImage ? urlFor(post.mainImage)?.width(1200).height(630).quality(100).url() : undefined;
   const readTime = estimateReadTime(JSON.stringify(post?.body));
 
+  const blogPostingSchema = generateBlogPostingSchema({
+    title: post.title,
+    description: `Read "${post.title}" by Timothy Lee - insights on software engineering, machine learning, and technology.`,
+    url: `${SITE_URL}/blog/post/${slug}`,
+    datePublished: post.publishedAt,
+    author: {
+      name: post.author.name,
+      url: SITE_URL,
+    },
+    image: ogImageUrl,
+  });
+
+  const breadcrumbSchema = generateBreadcrumbSchema({
+    items: [
+      { name: "Home", url: SITE_URL },
+      { name: "Blog", url: `${SITE_URL}/blog` },
+      { name: post.title, url: `${SITE_URL}/blog/post/${slug}` },
+    ],
+  });
+
   return (
-    <article>
+    <>
+      <JsonLdScript data={blogPostingSchema} />
+      <JsonLdScript data={breadcrumbSchema} />
+      <article>
       <FadeIn>
         <header className="mb-12 text-center max-w-3xl mx-auto">
           <div className="flex flex-wrap justify-center gap-2 mb-6">
@@ -169,6 +231,7 @@ async function PostContent({ slug }: { slug: string }) {
         </div>
       </FadeIn>
     </article>
+    </>
   );
 }
 

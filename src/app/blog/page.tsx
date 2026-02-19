@@ -1,15 +1,34 @@
 import { client } from "@/sanity/lib/client";
 import { BlogList } from "@/components/components-blog-list";
-import { POSTS_CARD_QUERYResult } from "@/lib/sanity.types";
+import { POSTS_CARD_QUERY_RESULT } from "@/lib/sanity.types";
 import { POSTS_CARD_QUERY } from "@/lib/sanity.queries";
 import { urlFor } from "@/sanity/lib/image";
 import { Suspense, cache } from "react";
 import AllPostSkeleton from "@/components/all-post-skeleton";
+import type { Metadata } from "next";
+
+const SITE_URL = process.env.NEXT_PUBLIC_URL || "https://timooothy.dev";
+
+export const metadata: Metadata = {
+  title: "Blog",
+  description:
+    "Read Timothy Lee's thoughts on software engineering, machine learning, AI, and technology. Insights from an ML Engineer and Software Developer.",
+  alternates: {
+    canonical: `${SITE_URL}/blog`,
+  },
+  openGraph: {
+    title: "Blog | Timothy Lee",
+    description:
+      "Read Timothy Lee's thoughts on software engineering, machine learning, AI, and technology.",
+    url: `${SITE_URL}/blog`,
+    type: "website",
+  },
+};
 
 const POSTS_PER_PAGE = 4;
 
 const getBlogPosts = cache(async (start: number, end: number) => {
-  return await client.fetch<POSTS_CARD_QUERYResult>(
+    return await client.fetch<POSTS_CARD_QUERY_RESULT>(
     POSTS_CARD_QUERY,
     { start, end },
     { next: { revalidate: 60 } }
