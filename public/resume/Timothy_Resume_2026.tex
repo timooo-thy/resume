@@ -1,0 +1,142 @@
+\documentclass[11pt,letterpaper]{article}
+
+% Basic packages
+\usepackage[margin=0.5in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem} % Added for easier list control, though we will keep your custom environments
+
+% Basic formatting
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt} % Set to 0 to prevent automatic gaps between paragraphs
+\pagestyle{empty}
+
+% Simple section formatting
+\newcommand{\resheading}[1]{%
+  \vspace{10pt}
+  {\normalsize \textbf{\MakeUppercase{#1}}}\\
+  \vspace{-8pt}
+  \hrule
+  \vspace{6pt}
+}
+
+% Resume item formatting 
+\newcommand{\resitem}[1]{\item \small #1}
+
+% Subheading formatting - Adjusted for tighter vertical flow
+\newcommand{\ressubheading}[4]{
+    \vspace{2pt}
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+        \small \textbf{#1} & \small #2 \\
+        \small \textit{#3} & \small \textit{#4} \\
+    \end{tabular*}\vspace{-3pt}}
+    
+\newcommand{\ressubheadingfirst}[4]{
+    \vspace{0pt}
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+        \small \textbf{#1} & \small #2 \\
+        \small \textit{#3} & \small \textit{#4} \\
+    \end{tabular*}\vspace{-3pt}}
+
+% Custom itemize environment with no left margin
+\newenvironment{leftitemize}{%
+  \begin{list}{}{%
+    \setlength{\leftmargin}{0pt}%
+    \setlength{\itemindent}{0pt}%
+    \setlength{\labelsep}{0pt}%
+    \setlength{\labelwidth}{0pt}%
+    \setlength{\topsep}{0pt}%
+    \setlength{\partopsep}{0pt}%
+  }%
+}{%
+  \end{list}%
+}
+
+% FIXED: Custom itemize for sub-items with zero vertical spacing
+\newenvironment{subitemize}{%
+  \begin{list}{\textbullet}{%
+    \setlength{\leftmargin}{15pt}%
+    \setlength{\itemindent}{0pt}%
+    \setlength{\labelsep}{0.5em}%
+    \setlength{\labelwidth}{0.5em}%
+    \setlength{\topsep}{0pt}%       % No space before list
+    \setlength{\partopsep}{0pt}%
+    \setlength{\itemsep}{0.5pt}%    % Tight space between bullets
+    \setlength{\parsep}{0pt}%       % No space between paragraphs in a bullet
+  }%
+}{%
+  \end{list}\vspace{-1pt}%           % Small buffer after the list ends
+}
+
+\begin{document}
+
+%----------HEADER----------
+\begin{center}
+{\Large \textbf{Timothy Lee}}\\
+\vspace{2pt}
+\small Singapore $|$ \href{mailto:timothylhy@hotmail.com}{timothylhy@hotmail.com} $|$ +65 9857 2155\\
+\small \href{https://timooothy.dev}{timooothy.dev} $|$ \href{https://linkedin.com/in/timooothy}{linkedin.com/in/timooothy} $|$ \href{https://github.com/timooo-thy}{github.com/timooo-thy}
+\end{center}
+\vspace{2pt}
+
+%----------EDUCATION----------
+\resheading{Education}
+\begin{leftitemize}
+\item[]
+\ressubheadingfirst{Bachelor of Science (B.S.) - Data Science and Artificial Intelligence}{Aug 2022 - Jun 2026 (Expected)}{Nanyang Technological University, Singapore}{}
+\begin{subitemize}
+    \resitem{\textbf{CGPA:} 4.75/5.00}
+    \resitem{\textbf{Scholarships:} Nanyang Technological College Scholarship, Bigo Excellence Scholarship}
+    \resitem{\textbf{Awards:} Dean's List AY 23/24}
+    \resitem{\textbf{Hackathons:} SimplifyNext RPA x Gen AI 2024 (1st Place), DSTA BrainHack 2024 (1st Runner Up), GIC Code To Impact 2024 (2nd Runner Up), HTX HacX 2024 (3rd Runner Up)}
+    \resitem{\textbf{Certifications:} Google Analytics Specialisation, Google UX Specialisation}
+\end{subitemize}
+\end{leftitemize}
+
+%----------EXPERIENCE----------
+\resheading{Experience}
+\begin{leftitemize}
+\item[]
+\ressubheadingfirst{Machine Learning Engineer Intern}{Aug 2025 -- Dec 2025}{TikTok, Singapore}{}
+\begin{subitemize}
+    \resitem{Engineered high-precision Small Language Models (SLMs) via Knowledge Distillation to capture user intent; applied a novel ``Random Retrieval Augmented Generation (RAG)" fine-tuning strategy for GeoIntent (0.90 P/R) and semantic query analysis for Timeliness (0.96 P/R).}
+    \resitem{Designed and deployed a near-line cache architecture across 16 countries (US, EU, ROW) to serve these query intent signals in real-time.}
+    \resitem{Integrated GeoIntent and Timeliness query intent signals into Ranking and Retrieval pipelines across 16 countries (US, EU, ROW), measurably improving local discovery relevance for location-based and time-sensitive search results.}
+\end{subitemize}
+
+\item[]
+\ressubheading{Software Engineer Intern}{May 2025 -- Aug 2025}{Goldman Sachs, Singapore}{}
+\begin{subitemize}
+    \resitem{Engineered a Policy Builder Playground for authorisation policies, featuring custom syntax highlighting and an integrated chatbot delivering 95\% compilable code for over 100 internal developers.}
+    \resitem{Developed a graph-based Self Healing Code Agent leveraging Retrieval Augmented Generation (RAG), enabling automated code correction, saving an estimated 10 hours per developer weekly.}
+    \resitem{Architected and deployed the Self Healing Code Agent backend on Kubernetes, supporting horizontal scaling and high availability for internal developer tooling.}
+\end{subitemize}
+
+\item[]
+\ressubheading{Software Engineer Intern}{Jul 2024 -- Dec 2024}{ShopBack, Singapore}{}
+\begin{subitemize}
+    \resitem{Spearheaded implementation of Generative AI solutions to optimise internal operations, reducing average handling time (AHT) from 365 seconds to 200 seconds (45\% improvement).}
+    \resitem{Developed a prompt management version control platform integrating Salesforce and Zendesk, resulting in 80\% improved consistency and 60\% faster workflows.}
+\end{subitemize}
+
+\item[]
+\ressubheading{Machine Learning Engineer Intern}{Apr 2024 -- Jul 2024}{Home Team Science \& Technology Agency, Singapore}{}
+\begin{subitemize}
+    \resitem{Built a multimodal Large Language Model (LLM) chatbot integrating LLaVA, Whisper, and LLaMA3, reducing case processing time by over 40\% for officers.}
+    \resitem{Implemented memory capabilities and optimised query retrieval using LangChain and Chroma via Retrieval Augmented Generation (RAG) and advanced metadata filtering.}
+    \resitem{Finetuned a LLaMA3 large language model using QLoRA with domain knowledge, improving accuracy by 30\% after evaluation.}
+\end{subitemize}
+\end{leftitemize}
+
+%----------SKILLS----------
+\resheading{Skills}
+\begin{leftitemize}
+\item[]
+\vspace{3pt}
+\small \textbf{Languages:} Python, TypeScript, Golang, SQL\\[2pt]
+\small \textbf{Machine Learning \& AI:} PyTorch, LangChain, LangGraph, HuggingFace Transformers\\[2pt]
+\small \textbf{Databases:} PostgreSQL, MySQL, MongoDB, Chroma, Redis\\[2pt]
+\small \textbf{Backend \& Web Frameworks:} FastAPI, Next.js, Express.js, Gin\\[2pt]
+\small \textbf{Cloud \& DevOps:} AWS, Google Cloud Platform, Docker, Kubernetes
+\end{leftitemize}
+
+\end{document}
